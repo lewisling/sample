@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ps</title>
+  <title>Project Scorecard</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
-
+<body id="store">
+  <div id="banner">
+     <%= image_tag("logo.gif") %>
+     <%= @page_title || "Project Scorecard" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <%= link_to 'Product List', products_path %> <br />
+      <%= link_to 'New Product', new_product_path %> <br />
+      <%= link_to 'Review List', reviews_path %> <br />
+      <%= link_to 'New Review', new_review_path %> <br />
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
 </body>
+
 </html>
