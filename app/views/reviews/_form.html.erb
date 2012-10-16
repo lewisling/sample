@@ -13,15 +13,18 @@
 
   <div class="field">
     <%= f.label :product_id %><br />
-    <%= f.number_field :product_id %>
+    <%= collection_select(:review, :product_id, Product.all, :id, 
+                   :model, :prompt => true)  %>
   </div>
   <div class="field">
     <%= f.label :milestone_id %><br />
-    <%= f.number_field :milestone_id %>
+    <%= collection_select(:review, :milestone_id, Milestone.all, :id, 
+                   :name, :prompt => true)  %>
   </div>
   <div class="field">
-    <%= f.label :reviewtype_id %><br />
-    <%= f.number_field :reviewtype_id %>
+    <%= f.label :reviewpurpose_id %><br />
+    <%= collection_select(:review, :reviewpurpose_id, ReviewPurpose.all, :id, 
+                   :reviewpurpose, :prompt => true)  %>
   </div>
   <div class="field">
     <%= f.label :planned_date %><br />
@@ -33,7 +36,8 @@
   </div>
   <div class="field">
     <%= f.label :reviewresult_id %><br />
-    <%= f.number_field :reviewresult_id %>
+    <%= collection_select(:review, :reviewresult_id, ReviewResult.all, :id, 
+                   :conclusion, :prompt => true)  %>
   </div>
   <div class="field">
     <%= f.label :comment %><br />
