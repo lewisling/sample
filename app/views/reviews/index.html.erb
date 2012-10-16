@@ -1,6 +1,7 @@
 <h1>Listing reviews</h1>
 
-<table>
+<table id="reviews" class="display">
+  <thead>
   <tr>
     <th>Product</th>
     <th>Milestone</th>
@@ -13,7 +14,9 @@
     <th></th>
     <th></th>
   </tr>
+  </thead>
 
+  <tbody>
 <% @reviews.each do |review| %>
   <tr>
     <td><%= review.product_id %></td>
@@ -28,8 +31,6 @@
     <td><%= link_to 'Destroy', review, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Review', new_review_path %>
