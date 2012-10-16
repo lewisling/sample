@@ -1,0 +1,23 @@
+<h1>Listing sw_classes</h1>
+
+<table>
+  <tr>
+    <th>Level</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sw_classes.each do |sw_class| %>
+  <tr>
+    <td><%= sw_class.level %></td>
+    <td><%= link_to 'Show', sw_class %></td>
+    <td><%= link_to 'Edit', edit_sw_class_path(sw_class) %></td>
+    <td><%= link_to 'Destroy', sw_class, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sw class', new_sw_class_path %>

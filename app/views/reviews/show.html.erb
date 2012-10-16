@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @review.product_id %>
+</p>
+
+<p>
+  <b>Milestone:</b>
+  <%= @review.milestone_id %>
+</p>
+
+<p>
+  <b>Reviewtype:</b>
+  <%= @review.reviewtype_id %>
+</p>
+
+<p>
+  <b>Planned date:</b>
+  <%= @review.planned_date %>
+</p>
+
+<p>
+  <b>Actual date:</b>
+  <%= @review.actual_date %>
+</p>
+
+<p>
+  <b>Reviewresult:</b>
+  <%= @review.reviewresult_id %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @review.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

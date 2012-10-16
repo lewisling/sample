@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  active: false
+  handover: false
+  category_id: 1
+  model: MyString
+  swclass_id: 1
+  description: MyString
+  platform_id: 1
+  swa_id: 1
+  spl_id: 1
+  supplier_id: 1
+  volume_forecast: 1
+  folder_ready: false
+  pd_plan: 1
+  pd_actual: 1
+  vpd_plan: 1
+  vpd_actual: 1
+  aa_plan: 1
+  aa_actual: 1
+  ppc_plan: 1
+  ppc_actual: 1
+  pv_plan: 1
+  pv_actual: 1
+  cr_plan: 1
+  cr_actual: 1
+  comment: MyString
+
+two:
+  active: false
+  handover: false
+  category_id: 1
+  model: MyString
+  swclass_id: 1
+  description: MyString
+  platform_id: 1
+  swa_id: 1
+  spl_id: 1
+  supplier_id: 1
+  volume_forecast: 1
+  folder_ready: false
+  pd_plan: 1
+  pd_actual: 1
+  vpd_plan: 1
+  vpd_actual: 1
+  aa_plan: 1
+  aa_actual: 1
+  ppc_plan: 1
+  ppc_actual: 1
+  pv_plan: 1
+  pv_actual: 1
+  cr_plan: 1
+  cr_actual: 1
+  comment: MyString

@@ -1,0 +1,25 @@
+<h1>Listing review_purposes</h1>
+
+<table>
+  <tr>
+    <th>Purpose</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @review_purposes.each do |review_purpose| %>
+  <tr>
+    <td><%= review_purpose.purpose %></td>
+    <td><%= review_purpose. %></td>
+    <td><%= link_to 'Show', review_purpose %></td>
+    <td><%= link_to 'Edit', edit_review_purpose_path(review_purpose) %></td>
+    <td><%= link_to 'Destroy', review_purpose, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Review purpose', new_review_purpose_path %>

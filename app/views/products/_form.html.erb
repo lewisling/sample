@@ -1,0 +1,117 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :handover %><br />
+    <%= f.check_box :handover %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :swclass_id %><br />
+    <%= f.number_field :swclass_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :platform_id %><br />
+    <%= f.number_field :platform_id %>
+  </div>
+  <div class="field">
+    <%= f.label :swa_id %><br />
+    <%= f.number_field :swa_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spl_id %><br />
+    <%= f.number_field :spl_id %>
+  </div>
+  <div class="field">
+    <%= f.label :supplier_id %><br />
+    <%= f.number_field :supplier_id %>
+  </div>
+  <div class="field">
+    <%= f.label :volume_forecast %><br />
+    <%= f.number_field :volume_forecast %>
+  </div>
+  <div class="field">
+    <%= f.label :folder_ready %><br />
+    <%= f.check_box :folder_ready %>
+  </div>
+  <div class="field">
+    <%= f.label :pd_plan %><br />
+    <%= f.number_field :pd_plan %>
+  </div>
+  <div class="field">
+    <%= f.label :pd_actual %><br />
+    <%= f.number_field :pd_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :vpd_plan %><br />
+    <%= f.number_field :vpd_plan %>
+  </div>
+  <div class="field">
+    <%= f.label :vpd_actual %><br />
+    <%= f.number_field :vpd_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :aa_plan %><br />
+    <%= f.number_field :aa_plan %>
+  </div>
+  <div class="field">
+    <%= f.label :aa_actual %><br />
+    <%= f.number_field :aa_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :ppc_plan %><br />
+    <%= f.number_field :ppc_plan %>
+  </div>
+  <div class="field">
+    <%= f.label :ppc_actual %><br />
+    <%= f.number_field :ppc_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :pv_plan %><br />
+    <%= f.number_field :pv_plan %>
+  </div>
+  <div class="field">
+    <%= f.label :pv_actual %><br />
+    <%= f.number_field :pv_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :cr_plan %><br />
+    <%= f.number_field :cr_plan %>
+  </div>
+  <div class="field">
+    <%= f.label :cr_actual %><br />
+    <%= f.number_field :cr_actual %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_field :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

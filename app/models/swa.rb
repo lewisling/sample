@@ -1,0 +1,3 @@
+class Swa < ActiveRecord::Base
+  attr_accessible :email, :name
+end

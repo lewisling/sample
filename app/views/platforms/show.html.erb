@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Hardware:</b>
+  <%= @platform.hardware %>
+</p>
+
+<p>
+  <b>Software:</b>
+  <%= @platform.software %>
+</p>
+
+
+<%= link_to 'Edit', edit_platform_path(@platform) %> |
+<%= link_to 'Back', platforms_path %>

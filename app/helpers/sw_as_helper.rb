@@ -1,0 +1,2 @@
+module SwAsHelper
+end

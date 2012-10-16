@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  product_id: 1
+  milestone_id: 1
+  reviewtype_id: 1
+  planned_date: 2012-10-16
+  actual_date: 2012-10-16
+  reviewresult_id: 1
+  comment: MyString
+
+two:
+  product_id: 1
+  milestone_id: 1
+  reviewtype_id: 1
+  planned_date: 2012-10-16
+  actual_date: 2012-10-16
+  reviewresult_id: 1
+  comment: MyString
