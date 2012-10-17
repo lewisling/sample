@@ -24,7 +24,7 @@
   <div class="field">
     <%= f.label :reviewpurpose_id %><br />
     <%= collection_select(:review, :reviewpurpose_id, ReviewPurpose.all, :id, 
-                   :reviewpurpose, :prompt => true)  %>
+                   :purpose, :prompt => true)  %>
   </div>
   <div class="field">
     <%= f.label :planned_date %><br />
