@@ -1,8 +1,11 @@
 class ProductsController < ApplicationController
+  has_scope :active, :type => :boolean
+  has_scope :handover, :type => :boolean
+  
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = apply_scopes(Product).all
 
     respond_to do |format|
       format.html # index.html.erb

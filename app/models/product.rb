@@ -9,4 +9,7 @@ class Product < ActiveRecord::Base
   belongs_to :supplier
 
   has_many :reviews
+
+  scope :active, where(:active => true)
+  scope :handover, where(:handover => true)
 end
