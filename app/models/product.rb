@@ -10,6 +10,12 @@ class Product < ActiveRecord::Base
 
   has_many :reviews
 
-  scope :active, where(:active => true)
-  scope :handover, where(:handover => true)
+  scope :is_active, where(:active => true)
+  scope :not_active, where(:active => false)
+  scope :is_handover, where(:handover => true)
+  scope :not_handover, where(:handover => false)
+  scope :new_created, where( ["created_at > ?", 1.week.ago] )
+  scope :old_created, where( ["created_at <= ?", 1.week.ago] )
+  scope :new_updated, where( ["updated_at > ?", 1.week.ago] )
+  scope :old_updated, where( ["updated_at <= ?", 1.week.ago] )
 end

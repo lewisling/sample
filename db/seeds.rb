@@ -6,6 +6,12 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
+Product.destroy_all
+
+Review.destroy_all
+
+Platform.destroy_all
+
 Category.destroy_all
 ["C35 PAV", "C52 In-Car", "C36 Docking", "C40 Clock", "E56 DV", "C77 HMP",
   "D75 Tablet", "C54 Micro"].each do |name|

@@ -1,7 +1,13 @@
 class ProductsController < ApplicationController
-  has_scope :active, :type => :boolean
-  has_scope :handover, :type => :boolean
-  
+  has_scope :is_active, :type => :boolean
+  has_scope :not_active, :type => :boolean
+  has_scope :is_handover, :type => :boolean
+  has_scope :not_handover, :type => :boolean
+  has_scope :new_created, :type => :boolean
+  has_scope :old_created, :type => :boolean
+  has_scope :new_updated, :type => :boolean
+  has_scope :old_updated, :type => :boolean
+
   # GET /products
   # GET /products.json
   def index
