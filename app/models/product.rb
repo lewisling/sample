@@ -20,4 +20,13 @@ class Product < ActiveRecord::Base
   scope :old_created, where( ["created_at <= ?", 1.week.ago] )
   scope :new_updated, where( ["updated_at > ?", 1.week.ago] )
   scope :old_updated, where( ["updated_at <= ?", 1.week.ago] )
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |product|
+        csv << product.attributes.values_at(*column_names)
+      end
+    end
+  end
 end

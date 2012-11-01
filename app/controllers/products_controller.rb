@@ -16,6 +16,8 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @products }
+      format.csv { send_data @products.to_csv }
+      format.xls { send_data @products.to_xls, :filename => 'products.xls' }
     end
   end
 
