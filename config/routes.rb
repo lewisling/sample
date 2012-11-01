@@ -1,4 +1,6 @@
 Ps::Application.routes.draw do
+  root :to => 'products#index'
+
   resources :milestones
 
   resources :review_results
