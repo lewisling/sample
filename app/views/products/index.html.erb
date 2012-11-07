@@ -3,23 +3,23 @@
   <tr>
     <th>Category</th>
     <th>Model</th>
-    <th>Swclass</th>
+    <th>SW Class</th>
     <th>Description</th>
-    <th>Swa</th>
-    <th>Spl</th>
+    <th>SWA</th>
+    <th>SPL</th>
     <th>Supplier</th>
-    <th>Pd plan</th>
-    <th>Pd actual</th>
-    <th>Vpd plan</th>
-    <th>Vpd actual</th>
-    <th>Aa plan</th>
-    <th>Aa actual</th>
-    <th>Ppc plan</th>
-    <th>Ppc actual</th>
-    <th>Pv plan</th>
-    <th>Pv actual</th>
-    <th>Cr plan</th>
-    <th>Cr actual</th>
+    <th>PD Plan</th>
+    <th>PD Actual</th>
+    <th>VPD Plan</th>
+    <th>VPD Actual</th>
+    <th>AA Plan</th>
+    <th>AA Actual</th>
+    <th>PPC Plan</th>
+    <th>PPPC Actual</th>
+    <th>PV Plan</th>
+    <th>PV Actual</th>
+    <th>CR Plan</th>
+    <th>CR Actual</th>
     <th></th>
     <th></th>
   </tr>
@@ -29,7 +29,7 @@
 <% @products.each do |product| %>
   <tr>
     <td><%= product.category.name %></td>
-    <td><%= product.model %></td>
+    <td><%= link_to product.model, product_path(product) %></td>
     <td><%= product.swclass_id %></td>
     <td><%= product.description %></td>
     <td><%= product.swa.name %></td>

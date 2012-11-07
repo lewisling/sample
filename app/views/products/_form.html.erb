@@ -29,7 +29,7 @@
     <%= f.text_field :model %>
   </div>
   <div class="field">
-    <%= f.label :swclass_id %><br />
+    <label for="product_swclass_id">SW Class</label><br />
     <%= collection_select(:product, :swclass_id, SwClass.all, :id, 
                    :level, :prompt => true)  %>
   </div>
@@ -43,12 +43,12 @@
                    :hardware, :prompt => true)  %>
   </div>
   <div class="field">
-    <%= f.label :swa_id %><br />
+    <label for="product_swa_id">SWA</label><br />
     <%= collection_select(:product, :swa_id, Swa.all, :id, 
                    :name, :prompt => true)  %>
   </div>
   <div class="field">
-    <%= f.label :spl_id %><br />
+    <label for="product_spl_id">SPL</label><br />
     <%= collection_select(:product, :spl_id, Spl.all, :id, 
                    :name, :prompt => true)  %>
   </div>
@@ -66,51 +66,51 @@
     <%= f.check_box :folder_ready %>
   </div>
   <div class="field">
-    <%= f.label :pd_plan %><br />
+    <label for="product_pd_plan">PD Plan</label><br />
     <%= f.number_field :pd_plan %>
   </div>
   <div class="field">
-    <%= f.label :pd_actual %><br />
+    <label for="product_pd_actual">PD Actual</label><br />
     <%= f.number_field :pd_actual %>
   </div>
   <div class="field">
-    <%= f.label :vpd_plan %><br />
+    <label for="product_vpd_plan">VPD Plan</label><br />
     <%= f.number_field :vpd_plan %>
   </div>
   <div class="field">
-    <%= f.label :vpd_actual %><br />
+    <label for="product_vpd_actual">VPD Actual</label><br />
     <%= f.number_field :vpd_actual %>
   </div>
   <div class="field">
-    <%= f.label :aa_plan %><br />
+    <label for="product_aa_plan">AA Plan</label><br />
     <%= f.number_field :aa_plan %>
   </div>
   <div class="field">
-    <%= f.label :aa_actual %><br />
+    <label for="product_aa_actual">AA Actual</label><br />
     <%= f.number_field :aa_actual %>
   </div>
   <div class="field">
-    <%= f.label :ppc_plan %><br />
+    <label for="product_ppc_plan">PPC Plan</label><br />
     <%= f.number_field :ppc_plan %>
   </div>
   <div class="field">
-    <%= f.label :ppc_actual %><br />
+    <label for="product_ppc_actual">PPC Actual</label><br />
     <%= f.number_field :ppc_actual %>
   </div>
   <div class="field">
-    <%= f.label :pv_plan %><br />
+    <label for="product_pv_plan">PV Plan</label><br />
     <%= f.number_field :pv_plan %>
   </div>
   <div class="field">
-    <%= f.label :pv_actual %><br />
+    <label for="product_pv_actual">PV Actual</label><br />
     <%= f.number_field :pv_actual %>
   </div>
   <div class="field">
-    <%= f.label :cr_plan %><br />
+    <label for="product_cr_plan">CR Plan</label><br />
     <%= f.number_field :cr_plan %>
   </div>
   <div class="field">
-    <%= f.label :cr_actual %><br />
+    <label for="product_cr_actual">CR Actual</label><br />
     <%= f.number_field :cr_actual %>
   </div>
   <div class="field">

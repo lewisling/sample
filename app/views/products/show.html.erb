@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<div class="depot_form">
+  <fieldset>
+    <legend> Your Product Information</legend>
 
 <p>
   <b>Active:</b>
@@ -12,7 +14,7 @@
 
 <p>
   <b>Category:</b>
-  <%= @product.category_id %>
+  <%= @product.category.name %>
 </p>
 
 <p>
@@ -21,7 +23,7 @@
 </p>
 
 <p>
-  <b>Swclass:</b>
+  <b>SW Class:</b>
   <%= @product.swclass_id %>
 </p>
 
@@ -36,18 +38,18 @@
 </p>
 
 <p>
-  <b>Swa:</b>
-  <%= @product.swa_id %>
+  <b>SWA:</b>
+  <%= @product.swa.name %>
 </p>
 
 <p>
-  <b>Spl:</b>
-  <%= @product.spl_id %>
+  <b>SPL:</b>
+  <%= @product.spl.name%>
 </p>
 
 <p>
   <b>Supplier:</b>
-  <%= @product.supplier_id %>
+  <%= @product.supplier.name %>
 </p>
 
 <p>
@@ -61,62 +63,62 @@
 </p>
 
 <p>
-  <b>Pd plan:</b>
+  <b>PD plan:</b>
   <%= @product.pd_plan %>
 </p>
 
 <p>
-  <b>Pd actual:</b>
+  <b>PD actual:</b>
   <%= @product.pd_actual %>
 </p>
 
 <p>
-  <b>Vpd plan:</b>
+  <b>VPD plan:</b>
   <%= @product.vpd_plan %>
 </p>
 
 <p>
-  <b>Vpd actual:</b>
+  <b>VPD actual:</b>
   <%= @product.vpd_actual %>
 </p>
 
 <p>
-  <b>Aa plan:</b>
+  <b>AA plan:</b>
   <%= @product.aa_plan %>
 </p>
 
 <p>
-  <b>Aa actual:</b>
+  <b>AA actual:</b>
   <%= @product.aa_actual %>
 </p>
 
 <p>
-  <b>Ppc plan:</b>
+  <b>PPPC plan:</b>
   <%= @product.ppc_plan %>
 </p>
 
 <p>
-  <b>Ppc actual:</b>
+  <b>PPC actual:</b>
   <%= @product.ppc_actual %>
 </p>
 
 <p>
-  <b>Pv plan:</b>
+  <b>PV plan:</b>
   <%= @product.pv_plan %>
 </p>
 
 <p>
-  <b>Pv actual:</b>
+  <b>PV actual:</b>
   <%= @product.pv_actual %>
 </p>
 
 <p>
-  <b>Cr plan:</b>
+  <b>CR plan:</b>
   <%= @product.cr_plan %>
 </p>
 
 <p>
-  <b>Cr actual:</b>
+  <b>CR actual:</b>
   <%= @product.cr_actual %>
 </p>
 
@@ -128,3 +130,6 @@
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+
+  </fieldset>
+</div>
