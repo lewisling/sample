@@ -2,134 +2,138 @@
   <fieldset>
     <legend> Your Product Information</legend>
 
-<p>
-  <b>Active:</b>
-  <%= @product.active %>
-</p>
+    <table>
+      <tbody>
+        <tr>
+          <td>Active:</td>
+          <td><%= @product.active %></td>
+        </tr>
 
-<p>
-  <b>Handover:</b>
-  <%= @product.handover %>
-</p>
+        <tr>
+          <td>Handover:</td>
+          <td><%= @product.handover %></td>
+        </tr>
 
-<p>
-  <b>Category:</b>
-  <%= @product.cat %>
-</p>
+        <tr>
+          <td>Category:</td>
+          <td><%= @product.cat %></td>
+        </tr>
 
-<p>
-  <b>Model:</b>
-  <%= @product.model %>
-</p>
+        <tr>
+          <td>Model:</td>
+          <td><%= @product.model %></td>
+        </tr>
 
-<p>
-  <b>SW Class:</b>
-  <%= @product.swc %>
-</p>
+        <tr>
+          <td>SW Class:</td>
+          <td><%= @product.swc %></td>
+        </tr>
 
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
+        <tr>
+          <td>Description:</td>
+          <td><%= @product.description %></td>
+        </tr>
 
-<p>
-  <b>Platform:</b>
-  <%= @product.platform_id %>
-</p>
+        <tr>
+          <td>Platform:</td>
+          <td><%= @product.platform_id %></td>
+        </tr>
 
-<p>
-  <b>SWA:</b>
-  <%= @product.swa.name %>
-</p>
+        <tr>
+          <td>SWA:</td>
+          <td><%= @product.swa.name %></td>
+        </tr>
 
-<p>
-  <b>SPL:</b>
-  <%= @product.spl.name%>
-</p>
+        <tr>
+          <td>SPL:</td>
+          <td><%= @product.spl.name%><td>
+        </tr>
 
-<p>
-  <b>Supplier:</b>
-  <%= @product.supplier.name %>
-</p>
+        <tr>
+          <td>Supplier:</td>
+          <td><%= @product.supplier.name %></td>
+        </tr>
 
-<p>
-  <b>Volume forecast:</b>
-  <%= @product.volume_forecast %>
-</p>
+        <tr>
+          <td>Volume forecast:</td>
+          <td><%= @product.volume_forecast %></td>
+        </tr>
 
-<p>
-  <b>Folder ready:</b>
-  <%= @product.folder_ready %>
-</p>
+        <tr>
+          <td>Folder ready:</td>
+          <td><%= @product.folder_ready %></td>
+        </tr>
 
-<p>
-  <b>PD plan:</b>
-  <%= @product.pd_plan %>
-</p>
+        <tr>
+          <td>PD plan:</td>
+          <td><%= @product.pd_plan %></td>
+        </tr>
 
-<p>
-  <b>PD actual:</b>
-  <%= @product.pd_actual %>
-</p>
+        <tr>
+          <td>PD actual:</td>
+          <td><%= @product.pd_actual %></td>
+        </tr>
 
-<p>
-  <b>VPD plan:</b>
-  <%= @product.vpd_plan %>
-</p>
+        <tr>
+          <td>VPD plan:</td>
+          <td><%= @product.vpd_plan %></td>
+        </tr>
 
-<p>
-  <b>VPD actual:</b>
-  <%= @product.vpd_actual %>
-</p>
+        <tr>
+          <td>VPD actual:</td>
+          <td><%= @product.vpd_actual %></td>
+        </tr>
 
-<p>
-  <b>AA plan:</b>
-  <%= @product.aa_plan %>
-</p>
+        <tr>
+          <td>AA plan:</td>
+          <td><%= @product.aa_plan %></td>
+        </tr>
 
-<p>
-  <b>AA actual:</b>
-  <%= @product.aa_actual %>
-</p>
+        <tr>
+          <td>AA actual:</td>
+          <td><%= @product.aa_actual %></td>
+        </tr>
 
-<p>
-  <b>PPPC plan:</b>
-  <%= @product.ppc_plan %>
-</p>
+        <tr>
+          <td>PPPC plan:</td>
+          <td><%= @product.ppc_plan %></td>
+        </tr>
 
-<p>
-  <b>PPC actual:</b>
-  <%= @product.ppc_actual %>
-</p>
+        <tr>
+          <td>PPC actual:</td>
+          <td><%= @product.ppc_actual %></td>
+        </tr>
 
-<p>
-  <b>PV plan:</b>
-  <%= @product.pv_plan %>
-</p>
+        <tr>
+          <td>PV plan:</td>
+          <td><%= @product.pv_plan %></td>
+        </tr>
 
-<p>
-  <b>PV actual:</b>
-  <%= @product.pv_actual %>
-</p>
+        <tr>
+          <td>PV actual:</td>
+          <td><%= @product.pv_actual %></td>
+        </tr>
 
-<p>
-  <b>CR plan:</b>
-  <%= @product.cr_plan %>
-</p>
+        <tr>
+          <td>CR plan:</td>
+          <td><%= @product.cr_plan %></td>
+        </tr>
 
-<p>
-  <b>CR actual:</b>
-  <%= @product.cr_actual %>
-</p>
+        <tr>
+          <td>CR actual:</td>
+          <td><%= @product.cr_actual %></td>
+        </tr>
 
-<p>
-  <b>Comment:</b>
-  <%= @product.comment %>
-</p>
+        <tr>
+          <td>Comment:</td>
+          <td><%= @product.comment %></td>
+        </tr>
 
+      </tbody>
+    </table>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+    <%= link_to 'Edit', edit_product_path(@product) %> |
+    <%= link_to 'Back', products_path %>
 
   </fieldset>
 </div>
