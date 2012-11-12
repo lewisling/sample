@@ -11,7 +11,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = apply_scopes(Product).all
+    # @products = apply_scopes(Product).all
+
+    if params[:by_cat]
+      @products = Product.where(:cat => params[:by_cat])
+    else
+      @products = Product.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
