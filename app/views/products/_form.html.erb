@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :active %><br />
+    <%= f.label :active %>
     <%= f.check_box :active %>
   </div>
   <div class="field">
-    <%= f.label :handover %><br />
+    <%= f.label :handover %>
     <%= f.check_box :handover %>
   </div>
   <div class="field">
-    <label for="product_cat">Category</label><br />
+    <label for="product_cat">Category</label>
     <select id="product_cat" name="product[cat]">
       <option value>Please select</option>
       <option value="C35_PAV">C35_PAV</option>
@@ -34,11 +34,11 @@
     </select>
   </div>
   <div class="field">
-    <%= f.label :model %><br />
+    <%= f.label :model %>
     <%= f.text_field :model %>
   </div>
   <div class="field">
-    <label for="product_swc">SW Class</label><br />
+    <label for="product_swc">SW Class</label>
     <select id="product_swc" name="product[swc]">
       <option value>Please select</option>
       <option value="A+">A+</option>
@@ -48,87 +48,87 @@
     </select>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :platform_id %><br />
+    <%= f.label :platform_id %>
     <%= collection_select(:product, :platform_id, Platform.all, :id, 
                    :hardware, :prompt => true)  %>
   </div>
   <div class="field">
-    <label for="product_swa_id">SWA</label><br />
+    <label for="product_swa_id">SWA</label>
     <%= collection_select(:product, :swa_id, Swa.all, :id, 
                    :name, :prompt => true)  %>
   </div>
   <div class="field">
-    <label for="product_spl_id">SPL</label><br />
+    <label for="product_spl_id">SPL</label>
     <%= collection_select(:product, :spl_id, Spl.all, :id, 
                    :name, :prompt => true)  %>
   </div>
   <div class="field">
-    <%= f.label :supplier_id %><br />
+    <%= f.label :supplier_id %>
     <%= collection_select(:product, :supplier_id, Supplier.all, :id, 
                    :name, :prompt => true)  %>
   </div>
   <div class="field">
-    <%= f.label :volume_forecast %><br />
+    <%= f.label :volume_forecast %>
     <%= f.number_field :volume_forecast %>
   </div>
   <div class="field">
-    <%= f.label :folder_ready %><br />
+    <%= f.label :folder_ready %>
     <%= f.check_box :folder_ready %>
   </div>
   <div class="field">
-    <label for="product_pd_plan">PD Plan</label><br />
+    <label for="product_pd_plan">PD Plan</label>
     <%= f.number_field :pd_plan %>
   </div>
   <div class="field">
-    <label for="product_pd_actual">PD Actual</label><br />
+    <label for="product_pd_actual">PD Actual</label>
     <%= f.number_field :pd_actual %>
   </div>
   <div class="field">
-    <label for="product_vpd_plan">VPD Plan</label><br />
+    <label for="product_vpd_plan">VPD Plan</label>
     <%= f.number_field :vpd_plan %>
   </div>
   <div class="field">
-    <label for="product_vpd_actual">VPD Actual</label><br />
+    <label for="product_vpd_actual">VPD Actual</label>
     <%= f.number_field :vpd_actual %>
   </div>
   <div class="field">
-    <label for="product_aa_plan">AA Plan</label><br />
+    <label for="product_aa_plan">AA Plan</label>
     <%= f.number_field :aa_plan %>
   </div>
   <div class="field">
-    <label for="product_aa_actual">AA Actual</label><br />
+    <label for="product_aa_actual">AA Actual</label>
     <%= f.number_field :aa_actual %>
   </div>
   <div class="field">
-    <label for="product_ppc_plan">PPC Plan</label><br />
+    <label for="product_ppc_plan">PPC Plan</label>
     <%= f.number_field :ppc_plan %>
   </div>
   <div class="field">
-    <label for="product_ppc_actual">PPC Actual</label><br />
+    <label for="product_ppc_actual">PPC Actual</label>
     <%= f.number_field :ppc_actual %>
   </div>
   <div class="field">
-    <label for="product_pv_plan">PV Plan</label><br />
+    <label for="product_pv_plan">PV Plan</label>
     <%= f.number_field :pv_plan %>
   </div>
   <div class="field">
-    <label for="product_pv_actual">PV Actual</label><br />
+    <label for="product_pv_actual">PV Actual</label>
     <%= f.number_field :pv_actual %>
   </div>
   <div class="field">
-    <label for="product_cr_plan">CR Plan</label><br />
+    <label for="product_cr_plan">CR Plan</label>
     <%= f.number_field :cr_plan %>
   </div>
   <div class="field">
-    <label for="product_cr_actual">CR Actual</label><br />
+    <label for="product_cr_actual">CR Actual</label>
     <%= f.number_field :cr_actual %>
   </div>
   <div class="field">
-    <%= f.label :comment %><br />
+    <%= f.label :comment %>
     <%= f.text_field :comment %>
   </div>
   <div class="actions">
