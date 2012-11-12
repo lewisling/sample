@@ -14,8 +14,10 @@
     </div>
     <div id="columns">
       <div id="side">
-        <form name="input" action="/products" method="get">
-          <select name="by_cat">
+        <%= link_to 'All Products', products_path %> <br />
+        <form action="/products" method="get">
+          <select name="by_cat" onchange="this.form.submit()">
+            <option value="All">Select Cat.</option>
             <option value="C35_PAV">C35_PAV</option>
             <option value="C36_Docking">C36_Docking</option>
             <option value="C40_Clock">C40_Clock</option>
@@ -25,9 +27,8 @@
             <option value="D75_Tablet">D75_Tablet</option>
             <option value="E56_DV">E56_DV</option>
           </select>
-          <input type="submit" value="Filter">
+          <noscript><input type="submit" value="Filter"></noscript>
         </form>
-        <%= link_to 'All Products', products_path %> <br />
         <a href="/products?new_created=true">Created This Week</a> <br />
         <a href="/products?new_updated=true">Updated This Week</a> <br />
         <%= link_to 'New Product', new_product_path %> <br />

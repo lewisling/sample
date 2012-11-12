@@ -11,10 +11,12 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    # @products = apply_scopes(Product).all
-
     if params[:by_cat]
-      @products = Product.where(:cat => params[:by_cat])
+      if params[:by_cat]=="All"
+        @products = Product.all
+      else
+        @products = Product.where(:cat => params[:by_cat])
+      end
     else
       @products = Product.all
     end
