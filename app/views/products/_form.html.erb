@@ -20,9 +20,18 @@
     <%= f.check_box :handover %>
   </div>
   <div class="field">
-    <%= f.label :category_id %><br />
-    <%= collection_select(:product, :category_id, Category.all, :id,
-                   :name, :prompt => true) %>
+    <label for="product_cat">Category</label><br />
+    <select id="product_cat" name="product[cat]">
+      <option value>Please select</option>
+      <option value="C35 PAV">C35 PAV</option>
+      <option value="C36 Docking">C36 Docking</option>
+      <option value="C40 Clock">C40 Clock</option>
+      <option value="C52 In-Car">C52 In-Car</option>
+      <option value="C54 Micor">C54 Micro</option>
+      <option value="C77 HMP">C77 HMP</option>
+      <option value="D75 Tablet">D75 Tablet</option>
+      <option value="E56 DV">E56 DV</option>
+    </select>
   </div>
   <div class="field">
     <%= f.label :model %><br />
