@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
       if params[:by_cat]=="All"
         @products = Product.all
       else
-        @products = Product.where(:cat => params[:by_cat])
+        @products = Product.joins(:category).where("categories.name"=>params[:by_cat])
       end
     else
       @products = Product.all
