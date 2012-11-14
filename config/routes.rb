@@ -1,4 +1,6 @@
 Ps::Application.routes.draw do
+  resources :swcs
+
   root :to => 'products#index'
 
   resources :milestones

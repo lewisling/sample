@@ -29,14 +29,9 @@
     <%= f.text_field :model %>
   </div>
   <div class="field">
-    <label for="product_swc">SW Class</label>
-    <select id="product_swc" name="product[swc]">
-      <option value>Please select</option>
-      <option value="A+">A+</option>
-      <option value="A">A</option>
-      <option value="B">B</option>
-      <option value="C">C</option>
-    </select>
+    <label for="product_swc_id">SW Class</label>
+    <%= collection_select(:product, :swc_id, Swc.all, :id, 
+                   :name, :prompt => true)  %>
   </div>
   <div class="field">
     <%= f.label :description %>
