@@ -14,27 +14,14 @@
     </div>
     <div id="columns">
       <div id="side">
-        <%= link_to 'All Products', products_path %> <br />
-        <form action="/products" method="get">
-          <select name="by_cat" onchange="this.form.submit()">
-            <option value="All">Select Cat.</option>
-            <option value="C35 PAV">C35 PAV</option>
-            <option value="C36 Docking">C36 Docking</option>
-            <option value="C40 Clock">C40 Clock</option>
-            <option value="C52 In-Car">C52 In-Car</option>
-            <option value="C54 Micro">C54 Micro</option>
-            <option value="C77 HMP">C77 HMP</option>
-            <option value="D75 Tablet">D75 Tablet</option>
-            <option value="E56 DV">E56 DV</option>
-          </select>
-          <noscript><input type="submit" value="Filter"></noscript>
-        </form>
-        <a href="/products?new_created=true">Created This Week</a> <br />
-        <a href="/products?new_updated=true">Updated This Week</a> <br />
-        <%= link_to 'New Product', new_product_path %> <br />
-        <!-- <br /> -->
-        <!-- <%= link_to 'All Reviews', reviews_path %> <br /> -->
-        <!-- <%= link_to 'New Review', new_review_path %> <br /> -->
+        <a href="/milestone">Milestone Review</a> <br />
+        <%= link_to 'Active Products', products_path %> <br />
+<!--         <a href="/products?created_at=1">New Created</a> <br />        
+        <a href="/products?updated_at=1">New Updated</a> <br />        
+ -->        
+        <a href="/summary">Summary</a> <br />
+        <%= link_to 'Create Product', new_product_path %> <br />
+        <a href="/products?inactive=1">Inactive Products</a> <br />        
       </div>
       <div id="main">
         <%= yield %>

@@ -1,7 +1,13 @@
 Ps::Application.routes.draw do
-  resources :swcs
+  root :to => 'products#milestone'
 
-  root :to => 'products#index'
+  match '/fulltable' => 'products#fulltable'
+
+  match '/summary' => 'products#summary'
+
+  match '/milestone' => 'products#milestone'
+
+  resources :swcs
 
   resources :milestones
 

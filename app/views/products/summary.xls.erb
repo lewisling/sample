@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+
+<Table>
+  <Row>
+    <Cell><Data ss:Type="String">Name/Cat.</Data></Cell>
+    <% @cats.each do |cat| %>
+      <Cell><Data ss:Type="String"><%= cat.name %></Data></Cell>
+    <% end %>
+  </Row>
+
+  <% @swas.each do |swa| %>
+  <Row>
+    <Cell><Data ss:Type="String"><%= swa.name %></Data></Cell>
+    <% @cats.each do |cat| %>
+      <% @p = Product.where(:swa_id => swa.id, :category_id => cat.id).count %>
+      <Cell><Data ss:Type="String"><%= @p if @p > 0 %></Data></Cell>
+    <% end %>
+  </Row>
+  <% end %>
+</Table>
+
+  </Worksheet>
+</Workbook>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+
+<Table>
+  <Row>
+    <Cell><Data ss:Type="String">Category</Data></Cell>
+    <Cell><Data ss:Type="String">Model</Data></Cell>
+    <Cell><Data ss:Type="String">SW Class</Data></Cell>
+    <Cell><Data ss:Type="String">Description</Data></Cell>
+    <Cell><Data ss:Type="String">SWA</Data></Cell>
+    <Cell><Data ss:Type="String">SPL</Data></Cell>
+    <Cell><Data ss:Type="String">Updated On</Data></Cell>
+    <Cell><Data ss:Type="String">Supplier</Data></Cell>
+    <Cell><Data ss:Type="String">PD Plan</Data></Cell>
+    <Cell><Data ss:Type="String">PD Actual</Data></Cell>
+    <Cell><Data ss:Type="String">VPD Plan</Data></Cell>
+    <Cell><Data ss:Type="String">VPD Actual</Data></Cell>
+    <Cell><Data ss:Type="String">AA Plan</Data></Cell>
+    <Cell><Data ss:Type="String">AA Actual</Data></Cell>
+    <Cell><Data ss:Type="String">PPC Plan</Data></Cell>
+    <Cell><Data ss:Type="String">PPPC Actual</Data></Cell>
+    <Cell><Data ss:Type="String">PV Plan</Data></Cell>
+    <Cell><Data ss:Type="String">PV Actual</Data></Cell>
+    <Cell><Data ss:Type="String">CR Plan</Data></Cell>
+    <Cell><Data ss:Type="String">CR Actual</Data></Cell>
+  </Row>
+
+<% @products.each do |product| %>
+  <Row>
+    <Cell><Data ss:Type="String"><%= product.category.name %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= link_to product.model, product_path(product) %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.swc.name %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.description %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.swa.name %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.spl.name %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.updated_at.strftime("%Y-%m-%d") %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.supplier.name %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.pd_plan %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.pd_actual %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.vpd_plan %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.vpd_actual %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.aa_plan %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.aa_actual %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.ppc_plan %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.ppc_actual %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.pv_plan %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.pv_actual %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.cr_plan %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.cr_actual %></Data></Cell>
+  </Row>
+<% end %>
+</Table>
+
+  </Worksheet>
+</Workbook>

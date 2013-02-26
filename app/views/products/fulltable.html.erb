@@ -1,0 +1,75 @@
+<p>
+Filter: 
+<a href="/fulltable?by_cat=C35+PAV">C35 PAV</a> |
+<a href="/fulltable?by_cat=C36+Docking">C36 Docking</a> |
+<a href="/fulltable?by_cat=C40+Clock">C40 Clock</a> |
+<a href="/fulltable?by_cat=C52+In-Car">C52 In-Car</a> |
+<a href="/fulltable?by_cat=C54+Micro">C54 Micro</a> |
+<a href="/fulltable?by_cat=C77+HMP">C77 HMP</a> |
+<a href="/fulltable?by_cat=D75+Tablet">D75 Table</a> |
+<a href="/fulltable?by_cat=E56+DV">E56 DV</a> |
+<a href="/products?by_cat=Appessory">Appessory</a>
+<br />
+Show: 
+<a href="/products">Short Table</a> |
+<a href="/fulltable">Full Table</a>
+<br />
+Export: <a href="/fulltable.xls">Excel Table</a>
+</p>
+
+<table id="products" class="display">
+  <thead>
+  <tr>
+    <th>Category</th>
+    <th>Model</th>
+    <th>SW Class</th>
+    <th>Description</th>
+    <th>SWA</th>
+    <th>SPL</th>
+    <th>Updated On</th>
+    <th>Supplier</th>
+    <th>PD Plan</th>
+    <th>PD Actual</th>
+    <th>VPD Plan</th>
+    <th>VPD Actual</th>
+    <th>AA Plan</th>
+    <th>AA Actual</th>
+    <th>PPC Plan</th>
+    <th>PPPC Actual</th>
+    <th>PV Plan</th>
+    <th>PV Actual</th>
+    <th>CR Plan</th>
+    <th>CR Actual</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.category.name %></td>
+    <td><%= link_to product.model, product_path(product) %></td>
+    <td><%= product.swc.name %></td>
+    <td><%= product.description %></td>
+    <td><%= product.swa.name %></td>
+    <td><%= product.spl.name %></td>
+    <td><%= product.updated_at.strftime("%Y-%m-%d") %></td>
+    <td><%= product.supplier.name %></td>
+    <td><%= product.pd_plan %></td>
+    <td><%= product.pd_actual %></td>
+    <td><%= product.vpd_plan %></td>
+    <td><%= product.vpd_actual %></td>
+    <td><%= product.aa_plan %></td>
+    <td><%= product.aa_actual %></td>
+    <td><%= product.ppc_plan %></td>
+    <td><%= product.ppc_actual %></td>
+    <td><%= product.pv_plan %></td>
+    <td><%= product.pv_actual %></td>
+    <td><%= product.cr_plan %></td>
+    <td><%= product.cr_actual %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+

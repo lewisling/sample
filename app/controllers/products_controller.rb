@@ -1,32 +1,77 @@
 class ProductsController < ApplicationController
-  has_scope :is_active, :type => :boolean
-  has_scope :not_active, :type => :boolean
-  has_scope :is_handover, :type => :boolean
-  has_scope :not_handover, :type => :boolean
-  has_scope :new_created, :type => :boolean
-  has_scope :old_created, :type => :boolean
-  has_scope :new_updated, :type => :boolean
-  has_scope :old_updated, :type => :boolean
 
   # GET /products
   # GET /products.json
   def index
     if params[:by_cat]
-      if params[:by_cat]=="All"
-        @products = Product.all
-      else
-        @products = Product.joins(:category).where("categories.name"=>params[:by_cat])
-      end
-    else
-      @products = Product.all
+      @products = Product.joins(:category).where(:active => true, "categories.name"=>params[:by_cat])
+    elsif params[:inactive]
+      @products = Product.where(:active => false)
+    elsif params[:created_at]
+      @products = Product.where(:active => true,
+                          :created_at => (Time.now.midnight - params[:created_at].to_i.week)..Time.now.midnight)
+    elsif params[:updated_at]
+      @products = Product.where(:active => true,
+                          :updated_at => (Time.now.midnight - params[:updated_at].to_i.week)..Time.now.midnight)
+    else # all active products
+      @products = Product.where(:active => true)
     end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @products }
-      format.csv { send_data @products.to_csv }
-      format.xls { send_data @products.to_xls, :filename => 'products.xls' }
+      format.xls # index.xls.erb
     end
+  end
+
+  # GET /fulltable
+  def fulltable
+    if params[:by_cat]
+      @products = Product.joins(:category).where(:active => true, "categories.name"=>params[:by_cat])
+    elsif params[:inactive]
+      @products = Product.where(:active => false)
+    elsif params[:created_at]
+      @products = Product.where(:active => true,
+                          :created_at => (Time.now.midnight - params[:created_at].to_i.week)..Time.now.midnight)
+    elsif params[:updated_at]
+      @products = Product.where(:active => true,
+                          :updated_at => (Time.now.midnight - params[:updated_at].to_i.week)..Time.now.midnight)
+    else # all active products
+      @products = Product.where(:active => true)
+    end
+
+    respond_to do |format|
+      format.html # fulltable.html.erb
+      format.json { render :json => @products }
+      format.xls # fulltable.xls.erb
+    end
+  end
+
+  # GET /summary
+  def summary
+    @swas = Swa.all
+    @cats = Category.all
+    @spls = Spl.all
+
+    respond_to do |format|
+      format.html # summary.html.erb
+      format.xls # summary.xls.erb
+    end
+  end
+
+  # GET /milestone
+  def milestone
+    @products = Product.where(:active => true)
+    if params[:week]
+      @week = params[:week]
+    else
+      @week = "13" + "%02d" % Date.today.cweek
+    end
+
+    respond_to do |format|
+      format.html # milestone.html.erb
+      format.xls # milestone.xls.erb
+    end    
   end
 
   # GET /products/1

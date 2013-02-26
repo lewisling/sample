@@ -1,0 +1,41 @@
+<p>
+Export To: <%= link_to "Excel Table", products_path(format: "xls")  %>
+</p>
+
+<table id="products" class="display">
+  <thead>
+  <tr>
+    <th>Name/Cat.</th>
+    <% @cats.each do |cat|  %>
+      <th><%= cat.name %></th>
+    <% end %>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <% @swas.each do |swa| %>
+  <tr>
+    <td><%= swa.name %></td>
+    <% @cats.each do |cat| %>
+    <% @p = Product.where(:active => true, :swa_id => swa.id, :category_id =>
+    cat.id).count %>
+    <td><%= @p if @p > 0 %></td>
+    <% end %>
+  </tr>
+  <% end %>
+
+  <!-- <% @spls.each do |spl| %> -->
+  <!-- <tr> -->
+  <!--   <td><%= spl.name %></td> -->
+  <!--   <% @cats.each do |cat| %> -->
+  <!--   <% @p = Product.where(:spl_id => spl.id, :category_id => cat.id).count %> -->
+  <!--   <td><%= @p if @p > 0 %></td> -->
+  <!--   <% end %> -->
+  <!-- </tr> -->
+  <!-- <% end %> -->
+
+  </tbody>
+
+</table>
+
