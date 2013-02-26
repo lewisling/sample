@@ -40,6 +40,7 @@ Export: <a href="/fulltable.xls">Excel Table</a>
     <th>PV Actual</th>
     <th>CR Plan</th>
     <th>CR Actual</th>
+    <th>Project Status</th>
     <th></th>
   </tr>
   </thead>
@@ -67,6 +68,7 @@ Export: <a href="/fulltable.xls">Excel Table</a>
     <td><%= product.pv_actual %></td>
     <td><%= product.cr_plan %></td>
     <td><%= product.cr_actual %></td>
+    <td><%= product.project_status %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
   </tr>
 <% end %>

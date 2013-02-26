@@ -124,9 +124,14 @@
           <td><%= @product.cr_actual %></td>
         </tr>
 
-        <tr>
+<!--         <tr>
           <td>Comment:</td>
           <td><%= @product.comment %></td>
+        </tr>
+ -->
+        <tr>
+          <td>Status:</td>
+          <td><%= simple_format(@product.project_status) %></td>
         </tr>
 
       </tbody>
