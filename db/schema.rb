@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130226025753) do
+ActiveRecord::Schema.define(:version => 20130304013550) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(:version => 20130226025753) do
     t.string   "cat"
     t.integer  "swc_id"
     t.text     "project_status"
+    t.string   "traffic"
+    t.boolean  "swccomfirmed"
   end
 
   create_table "review_purposes", :force => true do |t|

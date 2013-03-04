@@ -16,6 +16,10 @@
     <%= f.check_box :active %>
   </div>
   <div class="field">
+    <label for="traffic">Traffic Light</label>
+    <%= f.text_field :traffic %>
+  </div>
+  <div class="field">
     <%= f.label :handover %>
     <%= f.check_box :handover %>
   </div>
@@ -33,6 +37,12 @@
     <%= collection_select(:product, :swc_id, Swc.all, :id, 
                    :name, :prompt => true)  %>
   </div>
+
+  <div class="field">
+    <label for="swcconfirmed">Confirmed by SPL</label>
+    <%= f.check_box :swccomfirmed%>
+  </div>
+
   <div class="field">
     <%= f.label :description %>
     <%= f.text_field :description %>
@@ -57,7 +67,7 @@
     <%= collection_select(:product, :supplier_id, Supplier.all, :id, 
                    :name, :prompt => true)  %>
   </div>
-  <div class="field">
+<!--   <div class="field">
     <%= f.label :volume_forecast %>
     <%= f.number_field :volume_forecast %>
   </div>
@@ -65,7 +75,7 @@
     <%= f.label :folder_ready %>
     <%= f.check_box :folder_ready %>
   </div>
-  <div class="field">
+ -->  <div class="field">
     <label for="product_pd_plan">PD Plan</label>
     <%= f.number_field :pd_plan %>
   </div>

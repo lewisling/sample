@@ -10,6 +10,11 @@
         </tr>
 
         <tr>
+          <td>Traffic Light:</td>
+          <td><%= @product.traffic %></td>
+        </tr>
+
+        <tr>
           <td>Handover:</td>
           <td><%= @product.handover %></td>
         </tr>
@@ -27,6 +32,11 @@
         <tr>
           <td>SW Class:</td>
           <td><%= @product.swc.name %></td>
+        </tr>
+
+        <tr>
+          <td>SW Class is confirmed by SPL:</td>
+          <td><%= @product.swccomfirmed %></td>
         </tr>
 
         <tr>
@@ -54,7 +64,7 @@
           <td><%= @product.supplier.name %></td>
         </tr>
 
-        <tr>
+<!--         <tr>
           <td>Volume forecast:</td>
           <td><%= @product.volume_forecast %></td>
         </tr>
@@ -63,7 +73,7 @@
           <td>Folder ready:</td>
           <td><%= @product.folder_ready %></td>
         </tr>
-
+ -->
         <tr>
           <td>PD plan:</td>
           <td><%= @product.pd_plan %></td>
