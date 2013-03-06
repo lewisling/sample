@@ -17,7 +17,11 @@
   </div>
   <div class="field">
     <label for="traffic">Traffic Light</label>
-    <%= f.text_field :traffic %>
+    <select id="traffic" name="product[traffic]"><option value="">Please select</option>
+      <option value="Green">Green</option>
+      <option value="Yellow">Yellow</option>
+      <option value="Red">Red</option>
+    </select>
   </div>
   <div class="field">
     <%= f.label :handover %>
