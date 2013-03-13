@@ -30,6 +30,11 @@
         </tr>
 
         <tr>
+          <td>Description:</td>
+          <td><%= @product.description %></td>
+        </tr>
+
+        <tr>
           <td>SW Class:</td>
           <td><%= @product.swc.name %></td>
         </tr>
@@ -40,13 +45,43 @@
         </tr>
 
         <tr>
-          <td>Description:</td>
-          <td><%= @product.description %></td>
+          <td>Base Product:</td>
+          <td><%= @product.BaseProduct %></td>
         </tr>
 
         <tr>
-          <td>Platform:</td>
-          <td><%= @product.platform_id %></td>
+          <td>Changes From Base Product:</td>
+          <td><%= @product.ChangesFromBaseProduct %></td>
+        </tr>
+
+        <tr>
+          <td>App Name & Version:</td>
+          <td><%= @product.AppNameVersion %></td>
+        </tr>
+
+        <tr>
+          <td>New Platform:</td>
+          <td><%= @product.NewPlatform %></td>
+        </tr>
+
+        <tr>
+          <td>New SDK:</td>
+          <td><%= @product.NewSDK %></td>
+        </tr>
+
+        <tr>
+          <td>New ODM:</td>
+          <td><%= @product.NewODM %></td>
+        </tr>
+
+        <tr>
+          <td>New IDH:</td>
+          <td><%= @product.NewIDH %></td>
+        </tr>
+
+        <tr>
+          <td>New App:</td>
+          <td><%= @product.NewApp %></td>
         </tr>
 
         <tr>
@@ -57,6 +92,11 @@
         <tr>
           <td>SPL:</td>
           <td><%= @product.spl.name%><td>
+        </tr>
+
+        <tr>
+          <td>Platform:</td>
+          <td><%= @product.platform_id %></td>
         </tr>
 
         <tr>

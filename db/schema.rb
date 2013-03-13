@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130304013550) do
+ActiveRecord::Schema.define(:version => 20130313075145) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -58,13 +58,21 @@ ActiveRecord::Schema.define(:version => 20130304013550) do
     t.integer  "cr_plan"
     t.integer  "cr_actual"
     t.string   "comment"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "cat"
     t.integer  "swc_id"
     t.text     "project_status"
     t.string   "traffic"
     t.boolean  "swccomfirmed"
+    t.boolean  "NewPlatform"
+    t.boolean  "NewSDK"
+    t.boolean  "NewApp"
+    t.boolean  "NewIDH"
+    t.boolean  "NewODM"
+    t.string   "AppNameVersion"
+    t.string   "BaseProduct"
+    t.string   "ChangesFromBaseProduct"
   end
 
   create_table "review_purposes", :force => true do |t|
