@@ -7,6 +7,8 @@ Ps::Application.routes.draw do
 
   match '/milestone' => 'products#milestone'
 
+  match '/predev' => 'products#predev'
+
   resources :swcs
 
   resources :milestones
