@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313075145) do
+ActiveRecord::Schema.define(:version => 20130318085056) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20130313075145) do
     t.string   "AppNameVersion"
     t.string   "BaseProduct"
     t.string   "ChangesFromBaseProduct"
+    t.integer  "traffic_id"
   end
 
   create_table "review_purposes", :force => true do |t|
@@ -120,6 +121,12 @@ ActiveRecord::Schema.define(:version => 20130313075145) do
   end
 
   create_table "swcs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "traffics", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

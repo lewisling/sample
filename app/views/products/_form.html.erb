@@ -16,12 +16,9 @@
     <%= f.check_box :active %>
   </div>
   <div class="field">
-    <label for="traffic">Traffic Light</label>
-    <select id="traffic" name="product[traffic]"><option value="">Please select</option>
-      <option value="Green">Green</option>
-      <option value="Yellow">Yellow</option>
-      <option value="Red">Red</option>
-    </select>
+    <%= f.label :traffic_id %>
+    <%= collection_select(:product, :traffic_id, Traffic.all, :id, 
+                   :name, :prompt => true)  %>
   </div>
   <div class="field">
     <%= f.label :handover %>

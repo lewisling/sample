@@ -1,4 +1,6 @@
 Ps::Application.routes.draw do
+  resources :traffics
+
   root :to => 'products#milestone'
 
   match '/fulltable' => 'products#fulltable'

@@ -1,0 +1,23 @@
+<h1>Listing traffics</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @traffics.each do |traffic| %>
+  <tr>
+    <td><%= traffic.name %></td>
+    <td><%= link_to 'Show', traffic %></td>
+    <td><%= link_to 'Edit', edit_traffic_path(traffic) %></td>
+    <td><%= link_to 'Destroy', traffic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Traffic', new_traffic_path %>
