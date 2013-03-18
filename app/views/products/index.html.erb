@@ -1,14 +1,8 @@
 <p>
 Filter: 
-<a href="/products?by_cat=C35+PAV">C35 PAV</a> |
-<a href="/products?by_cat=C36+Docking">C36 Docking</a> |
-<a href="/products?by_cat=C40+Clock">C40 Clock</a> |
-<a href="/products?by_cat=C52+In-Car">C52 In-Car</a> |
-<a href="/products?by_cat=C54+Micro">C54 Micro</a> |
-<a href="/products?by_cat=C77+HMP">C77 HMP</a> |
-<a href="/products?by_cat=D75+Tablet">D75 Table</a> |
-<a href="/products?by_cat=E56+DV">E56 DV</a> |
-<a href="/products?by_cat=Appessory">Appessory</a>
+<% @cats.each do |cat|  %>
+  <a href="/products?by_cat=<%= cat.name %>"><%= cat.name %></a> |
+<% end %>
 <br />
 Show: 
 <a href="/products">Short Table</a> |
