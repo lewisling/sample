@@ -6,7 +6,8 @@ class Product < ActiveRecord::Base
   					:project_status, :traffic, :swccomfirmed, :BaseProduct, :ChangesFromBaseProduct, 
             :AppNameVersion, :NewPlatform, :NewSDK, :NewODM, :NewIDH, :NewApp
 
-  validates :category_id, :model, :spl_id, :swa_id, :swc_id, :supplier_id, :presence => true
+  validates :category_id, :model, :spl_id, :swa_id, :swc_id, :supplier_id, :platform_id, 
+            :presence => true
 
   belongs_to :platform
   belongs_to :swa
