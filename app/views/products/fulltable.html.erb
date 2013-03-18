@@ -1,14 +1,8 @@
 <p>
 Filter: 
-<a href="/fulltable?by_cat=C35+PAV">C35 PAV</a> |
-<a href="/fulltable?by_cat=C36+Docking">C36 Docking</a> |
-<a href="/fulltable?by_cat=C40+Clock">C40 Clock</a> |
-<a href="/fulltable?by_cat=C52+In-Car">C52 In-Car</a> |
-<a href="/fulltable?by_cat=C54+Micro">C54 Micro</a> |
-<a href="/fulltable?by_cat=C77+HMP">C77 HMP</a> |
-<a href="/fulltable?by_cat=D75+Tablet">D75 Table</a> |
-<a href="/fulltable?by_cat=E56+DV">E56 DV</a> |
-<a href="/products?by_cat=Appessory">Appessory</a>
+<% @cats.each do |cat|  %>
+  <a href="/products?by_cat=<%= cat.name %>"><%= cat.name %></a> |
+<% end %>
 <br />
 Show: 
 <a href="/products">Short Table</a> |
@@ -28,8 +22,7 @@ Export: <a href="/fulltable.xls">Excel Table</a>
     <th>SPL</th>
     <th>Updated On</th>
     <th>Supplier</th>
-    <th>PD Plan</th>
-    <th>PD Actual</th>
+    <th>PD</th>
     <th>VPD Plan</th>
     <th>VPD Actual</th>
     <th>AA Plan</th>
@@ -59,7 +52,6 @@ Export: <a href="/fulltable.xls">Excel Table</a>
     <td><%= product.pd_plan %></td>
     <td><%= product.pd_actual %></td>
     <td><%= product.vpd_plan %></td>
-    <td><%= product.vpd_actual %></td>
     <td><%= product.aa_plan %></td>
     <td><%= product.aa_actual %></td>
     <td><%= product.ppc_plan %></td>
