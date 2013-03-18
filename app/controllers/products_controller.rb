@@ -42,6 +42,8 @@ class ProductsController < ApplicationController
       @products = Product.where(:active => true)
     end
 
+    @cats = Category.all
+
     respond_to do |format|
       format.html # fulltable.html.erb
       format.json { render :json => @products }
