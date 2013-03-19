@@ -80,8 +80,8 @@ class ProductsController < ApplicationController
 
   # GET /predev
   def predev
-    # @products = Product.where(:active => true, :vpd_actual => nil, "pd_plan IS NOT NULL")
-    @products = Product.where("active = 't' AND pd_plan IS NOT NULL AND vpd_actual IS NULL")
+    @products = Product.joins(:swc).where(:active => true, "swcs.name" => 'PD')
+    # @products = Product.where("active = 't' AND pd_plan IS NOT NULL AND vpd_actual IS NULL")
 
     respond_to do |format|
       format.html # predev.html.erb
