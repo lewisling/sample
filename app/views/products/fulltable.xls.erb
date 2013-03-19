@@ -8,6 +8,7 @@
 
 <Table>
   <Row>
+    <Cell><Data ss:Type="String">Traffice Light</Data></Cell> 
     <Cell><Data ss:Type="String">Category</Data></Cell>
     <Cell><Data ss:Type="String">Model</Data></Cell>
     <Cell><Data ss:Type="String">SW Class</Data></Cell>
@@ -16,8 +17,8 @@
     <Cell><Data ss:Type="String">SPL</Data></Cell>
     <Cell><Data ss:Type="String">Updated On</Data></Cell>
     <Cell><Data ss:Type="String">Supplier</Data></Cell>
-    <Cell><Data ss:Type="String">PD Plan</Data></Cell>
-    <Cell><Data ss:Type="String">PD Actual</Data></Cell>
+    <Cell><Data ss:Type="String">Project Status</Data></Cell> 
+    <Cell><Data ss:Type="String">PD</Data></Cell>
     <Cell><Data ss:Type="String">VPD Plan</Data></Cell>
     <Cell><Data ss:Type="String">VPD Actual</Data></Cell>
     <Cell><Data ss:Type="String">AA Plan</Data></Cell>
@@ -32,6 +33,7 @@
 
 <% @products.each do |product| %>
   <Row>
+    <Cell><Data ss:Type="String"><%= product.traffic.name %></Data></Cell>
     <Cell><Data ss:Type="String"><%= product.category.name %></Data></Cell>
     <Cell><Data ss:Type="String"><%= link_to product.model, product_path(product) %></Data></Cell>
     <Cell><Data ss:Type="String"><%= product.swc.name %></Data></Cell>
@@ -40,10 +42,10 @@
     <Cell><Data ss:Type="String"><%= product.spl.name %></Data></Cell>
     <Cell><Data ss:Type="String"><%= product.updated_at.strftime("%Y-%m-%d") %></Data></Cell>
     <Cell><Data ss:Type="String"><%= product.supplier.name %></Data></Cell>
+    <Cell><Data ss:Type="String"><%= product.project_status %></Data></Cell>
     <Cell><Data ss:Type="String"><%= product.pd_plan %></Data></Cell>
     <Cell><Data ss:Type="String"><%= product.pd_actual %></Data></Cell>
     <Cell><Data ss:Type="String"><%= product.vpd_plan %></Data></Cell>
-    <Cell><Data ss:Type="String"><%= product.vpd_actual %></Data></Cell>
     <Cell><Data ss:Type="String"><%= product.aa_plan %></Data></Cell>
     <Cell><Data ss:Type="String"><%= product.aa_actual %></Data></Cell>
     <Cell><Data ss:Type="String"><%= product.ppc_plan %></Data></Cell>
