@@ -1,5 +1,7 @@
 <p>
-  Following projects shall be reviewed in week <b>"<%= @week %>"</b> (either the last open milestone is planned in this week; or the last open milestone is expired already; or no plan for milestone/s yet).
+<!--   Following projects shall be reviewed in week <b>"<%= @week %>"</b> (either the last open milestone is planned in this week; or the last open milestone is expired already; or no plan for milestone/s yet).
+ -->
+  Following projects shall be reviewed in week <b>"<%= @week %>"</b> (the last open milestone is planned in this week).
 </p>
 
 <form name="week" action="/milestone" method="get">
@@ -17,8 +19,7 @@ Week (YYWW): <input type="text" name="week">
     <th>Description</th>
     <th>SWA</th>
     <th>SPL</th>
-    <th>Updated On</th>
-    <th>Supplier</th>
+    <th>Project Status</th>
     <th>PD</th>
     <th>VPD Plan</th>
     <th>VPD Actual</th>
@@ -61,7 +62,7 @@ Week (YYWW): <input type="text" name="week">
  -->
 
   <!-- if open milestone is earlier than target week, print it -->
-  <% if open_milestone.to_i <= @week.to_i %>
+  <% if open_milestone.to_i == @week.to_i %>
     <tr>
       <td><%= product.traffic.name %></td>      
       <td><%= product.category.name %></td>
@@ -70,8 +71,7 @@ Week (YYWW): <input type="text" name="week">
       <td><%= product.description %></td>
       <td><%= product.swa.name %></td>
       <td><%= product.spl.name %></td>
-      <td><%= product.updated_at.strftime("%Y-%m-%d") %></td>
-      <td><%= product.supplier.name %></td>
+      <td><%= truncate(product.project_status, :length => 100) %></td>
       <td><%= product.pd_plan %></td>
       <td><%= product.pd_actual %></td>
       <td><%= product.vpd_plan %></td>
