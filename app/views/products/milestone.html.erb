@@ -1,7 +1,7 @@
 <p>
 <!--   Following projects shall be reviewed in week <b>"<%= @week %>"</b> (either the last open milestone is planned in this week; or the last open milestone is expired already; or no plan for milestone/s yet).
  -->
-  Following projects shall be reviewed in week <b>"<%= @week %>"</b> (the last open milestone is planned in this week).
+  Following projects shall be reviewed in week <b>"<%= @week %>"</b> (the last actual milestone is in this week).
 </p>
 
 <form name="week" action="/milestone" method="get">
@@ -38,30 +38,22 @@ Week (YYWW): <input type="text" name="week">
   <tbody>
 <% @products.each do |product| %>
 
-  <!-- find open milestone -->
-  <% if !product.vpd_actual? %>
-  <%    open_milestone = product.vpd_plan %>
-  <% elsif !product.aa_actual? %>
-  <%    open_milestone = product.aa_plan %>
-  <% elsif !product.ppc_actual? %>
-  <%    open_milestone = product.ppc_plan %>
-  <% elsif !product.pv_actual? %>
-  <%    open_milestone = product.pv_plan %>
-  <% elsif !product.cr_actual? %>
-  <%    open_milestone = product.cr_plan %>
+  <!-- find the last open actual milestone -->
+  <% if product.cr_actual? %>
+  <%    open_milestone = product.cr_actual %>
+  <% elsif product.pv_actual? %>
+  <%    open_milestone = product.pv_actual %>
+  <% elsif product.ppc_actual? %>
+  <%    open_milestone = product.ppc_actual %>
+  <% elsif product.aa_actual? %>
+  <%    open_milestone = product.aa_actual %>
+  <% elsif product.vpd_actual? %>
+  <%    open_milestone = product.vpd_actual %>
   <% else %>
   <%    open_milestone = "0" %>
   <% end %>
 
-<!--   <% if open_milestone.to_i <= @week.to_i %>
-    <%= product.model %>
-    <%= open_milestone %>
-    <%= @week %>
-    </br>
-  <% end %>
- -->
-
-  <!-- if open milestone is earlier than target week, print it -->
+  <!-- if open milestone is in target week, print it -->
   <% if open_milestone.to_i == @week.to_i %>
     <tr>
       <td><%= product.traffic.name %></td>      
