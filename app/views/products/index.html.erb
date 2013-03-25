@@ -31,13 +31,13 @@ Export: <%= link_to "Excel Table", products_path(format: "xls")  %>
   <tr>
     <td><%= product.traffic.name %></td>
     <td><%= product.category.name %></td>
-    <td><%= link_to product.model, product_path(product) %></td>
+    <td><%= link_to product.model, product_path(product), :target => '_blank' %></td>
     <td><%= product.swc.name %></td>
     <td><%= product.description %></td>
     <td><%= product.swa.name %></td>
     <td><%= product.spl.name %></td>
     <td><%= product.updated_at.strftime("%Y-%m-%d") %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Edit', edit_product_path(product), :target => '_blank' %></td>
   </tr>
 <% end %>
   </tbody>
