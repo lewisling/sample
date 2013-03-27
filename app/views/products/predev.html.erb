@@ -5,6 +5,7 @@
 <table id="products" class="display">
   <thead>
   <tr>
+    <th>Traffic Light</th>
     <th>Category</th>
     <th>Model</th>
     <th>SW Class</th>
@@ -21,6 +22,7 @@
   <tbody>
 <% @products.each do |product| %>
   <tr>
+    <td><%= product.traffic.name %></td>      
     <td><%= product.category.name %></td>
     <td><%= link_to product.model, product_path(product), :target => '_blank' %></td>
     <td><%= product.swc.name %></td>
