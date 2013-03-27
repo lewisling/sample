@@ -103,6 +103,11 @@
     <%= collection_select(:product, :supplier_id, Supplier.all, :id, 
                    :name, :prompt => true)  %>
   </div>
+  <div class="field">
+    <%= f.label :idh_id %>
+    <%= collection_select(:product, :idh_id, Idh.all, :id, 
+                   :name, :prompt => true)  %>
+  </div>
 <!--   <div class="field">
     <%= f.label :volume_forecast %>
     <%= f.number_field :volume_forecast %>

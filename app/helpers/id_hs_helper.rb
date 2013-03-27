@@ -1,0 +1,2 @@
+module IdHsHelper
+end

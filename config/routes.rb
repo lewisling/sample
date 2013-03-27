@@ -1,4 +1,6 @@
 Ps::Application.routes.draw do
+  resources :idhs
+
   resources :traffics
 
   root :to => 'products#milestone'

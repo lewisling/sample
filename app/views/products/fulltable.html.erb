@@ -23,6 +23,7 @@ Export: <a href="/fulltable.xls">Excel Table</a>
     <th>SPL</th>
     <th>Updated On</th>
     <th>Supplier</th>
+    <th>IDH</th>
     <th>Project_Status_Summary</th>
     <th>PD</th>
     <th>VPD Plan</th>
@@ -51,6 +52,7 @@ Export: <a href="/fulltable.xls">Excel Table</a>
     <td><%= product.spl.name %></td>
     <td><%= product.updated_at.strftime("%Y-%m-%d") %></td>
     <td><%= product.supplier.name %></td>
+    <td><%= product.idh.name %></td>
     <td><%= truncate(product.project_status, :length => 100) %></td>
     <td><%= product.pd_plan %></td>
     <td><%= product.pd_actual %></td>

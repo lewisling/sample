@@ -4,10 +4,10 @@ class Product < ActiveRecord::Base
   					:ppc_actual, :ppc_plan, :pv_actual, :pv_plan, :spl_id, :supplier_id, :swa_id, 
   					:volume_forecast, :vpd_actual, :vpd_plan, :swc_id, :category_id, :updated_at, 
   					:project_status, :traffic, :swccomfirmed, :BaseProduct, :ChangesFromBaseProduct, 
-            :AppNameVersion, :NewPlatform, :NewSDK, :NewODM, :NewIDH, :NewApp, :traffic_id
+            :AppNameVersion, :NewPlatform, :NewSDK, :NewODM, :NewIDH, :NewApp, :traffic_id, :idh_id
 
-  validates :category_id, :model, :spl_id, :swa_id, :swc_id, :supplier_id, :platform_id, 
-            :traffic_id,
+  validates :category_id, :model, :spl_id, :swa_id, :swc_id, :supplier_id, :platform_id,
+            :traffic_id, :idh_id,
             :presence => true
 
   belongs_to :platform
@@ -17,6 +17,7 @@ class Product < ActiveRecord::Base
   belongs_to :category
   belongs_to :swc
   belongs_to :traffic
+  belongs_to :idh
 
   has_many :reviews
 
