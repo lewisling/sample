@@ -39,18 +39,32 @@ Summary of class distribution.
     <% @swcs.each do |swc|  %>
       <th><%= swc.name %></th>
     <% end %>
+    <th>Total</th>
   </tr>
   </thead>
   <tbody>
   <% @cats.each do |cat| %>
   <tr>
-    <td width="40%"><%= cat.name %></td>
+    <td width="30%"><%= cat.name %></td>
     <% @swcs.each do |swc| %>
     <% @p = Product.where(:active => true, :swc_id => swc.id, :category_id =>
     cat.id).count %>
     <td width="15%" align="center"><%= @p if @p > 0 %></td>
     <% end %>
+    <% @p = Product.where(:active => true, :category_id => cat.id).count %>
+    <td width="15%" align="center" style="background-color:lightgray;"><%= @p if @p > 0 %></td>
   </tr>
   <% end %>
   </tbody>
+  <tfoot>
+  <tr style="background-color:lightgray;">
+    <td>Total</td>
+    <% @swcs.each do |swc| %>
+    <% @p = Product.where(:active => true, :swc_id => swc.id).count %>
+    <td align="center"><%= @p if @p > 0 %></td>
+    <% end %>
+    <% @p = Product.where(:active => true).count %>
+    <td align="center"><%= @p if @p > 0 %></td>
+  </tr>
+  </tfoot>
 </table>
