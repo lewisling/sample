@@ -1,41 +1,56 @@
 <p>
-Export To: <%= link_to "Excel Table", products_path(format: "xls")  %>
+Summary of resources allocation.
 </p>
 
-<table id="products" class="display">
+<table border="1" cellpadding="3" cellspacing="30" 
+  style="border:1px;border-collapse:collapse;">
   <thead>
-  <tr>
-    <th>Name/Cat.</th>
-    <% @cats.each do |cat|  %>
-      <th><%= cat.name %></th>
+  <!-- <tr style="background-color:green; color:white;"> -->
+  <tr style="background-color:lightgreen;">
+    <th>Cat./Name</th>
+    <% @swas.each do |swa|  %>
+      <th><%= swa.name %></th>
     <% end %>
   </tr>
   </thead>
-
   <tbody>
-
-  <% @swas.each do |swa| %>
+  <% @cats.each do |cat| %>
   <tr>
-    <td><%= swa.name %></td>
-    <% @cats.each do |cat| %>
+    <td><%= cat.name %></td>
+    <% @swas.each do |swa| %>
     <% @p = Product.where(:active => true, :swa_id => swa.id, :category_id =>
     cat.id).count %>
-    <td><%= @p if @p > 0 %></td>
+    <td align="center"><%= @p if @p > 0 %></td>
     <% end %>
   </tr>
   <% end %>
-
-  <!-- <% @spls.each do |spl| %> -->
-  <!-- <tr> -->
-  <!--   <td><%= spl.name %></td> -->
-  <!--   <% @cats.each do |cat| %> -->
-  <!--   <% @p = Product.where(:spl_id => spl.id, :category_id => cat.id).count %> -->
-  <!--   <td><%= @p if @p > 0 %></td> -->
-  <!--   <% end %> -->
-  <!-- </tr> -->
-  <!-- <% end %> -->
-
   </tbody>
-
 </table>
 
+<p>
+Summary of class distribution.
+</p>
+
+<table border="1" cellpadding="3" cellspacing="30" 
+  style="border:1px;border-collapse:collapse;">
+  <thead>
+  <tr style="background-color:lightgreen;">
+    <th>Cat./Class</th>
+    <% @swcs.each do |swc|  %>
+      <th><%= swc.name %></th>
+    <% end %>
+  </tr>
+  </thead>
+  <tbody>
+  <% @cats.each do |cat| %>
+  <tr>
+    <td width="40%"><%= cat.name %></td>
+    <% @swcs.each do |swc| %>
+    <% @p = Product.where(:active => true, :swc_id => swc.id, :category_id =>
+    cat.id).count %>
+    <td width="15%" align="center"><%= @p if @p > 0 %></td>
+    <% end %>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

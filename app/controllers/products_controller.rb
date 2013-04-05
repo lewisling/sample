@@ -55,7 +55,18 @@ class ProductsController < ApplicationController
   def summary
     @swas = Swa.all
     @cats = Category.all
-    @spls = Spl.all
+    @swcs = Swc.all
+
+    respond_to do |format|
+      format.html # summary.html.erb
+      format.xls # summary.xls.erb
+    end
+  end
+
+  # GET /summary
+  def summary_class
+    @cats = Category.all
+    @swcs = Swc.all
 
     respond_to do |format|
       format.html # summary.html.erb
