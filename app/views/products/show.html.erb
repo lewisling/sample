@@ -35,6 +35,11 @@
         </tr>
 
         <tr>
+          <td>CMM:</td>
+          <td><%= @product.cmm.name %></td>
+        </tr>
+
+        <tr>
           <td>SW Class:</td>
           <td><%= @product.swc.name %></td>
         </tr>
@@ -100,6 +105,11 @@
         </tr>
 
         <tr>
+          <td>Comment:</td>
+          <td><%= @product.comment %></td>
+        </tr>
+
+        <tr>
           <td>Supplier:</td>
           <td><%= @product.supplier.name %></td>
         </tr>
@@ -129,7 +139,7 @@
           <td><%= @product.pd_actual %></td>
         </tr>
  -->
-        <tr>
+<!--         <tr>
           <td>VPD plan:</td>
           <td><%= @product.vpd_plan %></td>
         </tr>
@@ -177,15 +187,66 @@
         <tr>
           <td>CR actual:</td>
           <td><%= @product.cr_actual %></td>
+        </tr> -->
+        
+        <tr>
+          <td valign="top">Milestones:</td>
+          <td>
+              <table border="1" align="center" cellpadding="3" cellspacing="30" style="border:1px;border-collapse:collapse;">
+              <tr align="center" style="background-color:lightgray;">
+                <td>VPD</td>
+                <td>AA</td>
+                <td>PPC</td>
+                <td>PV</td>
+                <td>CR</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><%= @product.vpd_actual %></td>
+                <td><%= @product.aa_vpd %></td>
+                <td><%= @product.ppc_vpd %></td>
+                <td><%= @product.pv_vpd %></td>
+                <td><%= @product.cr_vpd %></td>
+                <td>@VPD</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><%= @product.aa_actual %></td>
+                <td><%= @product.ppc_aa %></td>
+                <td><%= @product.pv_aaa %></td>
+                <td><%= @product.cr_aa %></td>
+                <td>@AA</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td><%= @product.ppc_actual %></td>
+                <td><%= @product.pv_ppc %></td>
+                <td><%= @product.cr_ppc %></td>
+                <td>@PPC</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><%= @product.pv_actual %></td>
+                <td><%= @product.cr_pv %></td>
+                <td>@PV</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><%= @product.cr_actual %></td>
+                <td>@CR</td>
+              </tr>
+            </table>
+          </td>
         </tr>
 
-<!--         <tr>
-          <td>Comment:</td>
-          <td><%= @product.comment %></td>
-        </tr>
- -->
         <tr>
-          <td>Status:</td>
+          <td valign="top">Status:</td>
           <td><%= simple_format(@product.project_status) %></td>
         </tr>
 

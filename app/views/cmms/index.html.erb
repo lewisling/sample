@@ -1,0 +1,23 @@
+<h1>Listing cmms</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cmms.each do |cmm| %>
+  <tr>
+    <td><%= cmm.name %></td>
+    <td><%= link_to 'Show', cmm %></td>
+    <td><%= link_to 'Edit', edit_cmm_path(cmm) %></td>
+    <td><%= link_to 'Destroy', cmm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cmm', new_cmm_path %>

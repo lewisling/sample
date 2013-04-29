@@ -21,15 +21,10 @@ Week (YYWW): <input type="text" name="week">
     <th>SPL</th>
     <th>Project_Status_Summary</th>
     <th>PD</th>
-    <th>VPD Plan</th>
     <th>VPD Actual</th>
-    <th>AA Plan</th>
     <th>AA Actual</th>
-    <th>PPC Plan</th>
     <th>PPPC Actual</th>
-    <th>PV Plan</th>
     <th>PV Actual</th>
-    <th>CR Plan</th>
     <th>CR Actual</th>
     <th></th>
   </tr>
@@ -65,15 +60,10 @@ Week (YYWW): <input type="text" name="week">
       <td><%= product.spl.name %></td>
       <td><%= truncate(product.project_status, :length => 100) %></td>
       <td><%= product.pd_plan %></td>
-      <td><%= product.pd_actual %></td>
-      <td><%= product.vpd_plan %></td>
-      <td><%= product.aa_plan %></td>
+      <td><%= product.vpd_actual %></td>
       <td><%= product.aa_actual %></td>
-      <td><%= product.ppc_plan %></td>
       <td><%= product.ppc_actual %></td>
-      <td><%= product.pv_plan %></td>
       <td><%= product.pv_actual %></td>
-      <td><%= product.cr_plan %></td>
       <td><%= product.cr_actual %></td>
       <td><%= link_to 'Edit', edit_product_path(product), :target => '_blank' %></td>
     </tr>

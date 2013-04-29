@@ -1,4 +1,6 @@
 Ps::Application.routes.draw do
+  resources :cmms
+
   resources :idhs
 
   resources :traffics

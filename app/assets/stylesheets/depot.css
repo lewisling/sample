@@ -208,7 +208,7 @@
 }
 
 .depot_form label {
-  width: 10em;
+  width: 12em;
   float: left;
   text-align: right;
   padding-top: 0.1em;
@@ -221,12 +221,12 @@
 }
 
 .depot_form .submit {
-  margin-left: 10em;
+  margin-left: 12em;
 }
 
 .depot_form .actions {
   margin-top: 2em; 
-  margin-left: 10em;
+  margin-left: 12em;
 }
 
 .depot_form div {

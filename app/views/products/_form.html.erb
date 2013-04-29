@@ -40,6 +40,12 @@
   </div>
 
   <div class="field">
+    <label for="product_cmm_id">CMM</label>
+    <%= collection_select(:product, :cmm_id, Cmm.all, :id, 
+                   :name, :prompt => true)  %>
+  </div>
+
+  <div class="field">
     <label for="product_swc_id">SW Class</label>
     <%= collection_select(:product, :swc_id, Swc.all, :id, 
                    :name, :prompt => true)  %>
@@ -55,7 +61,7 @@
     <%= f.text_field :BaseProduct %>
   </div>
   <div class="field">
-    <label for="ChangesFromBaseProduct">ChangesFromBase</label>
+    <label for="ChangesFromBaseProduct">Changes From Base</label>
     <%= f.text_field :ChangesFromBaseProduct %>
   </div>
   <div class="field">
@@ -98,13 +104,19 @@
     <%= collection_select(:product, :platform_id, Platform.all, :id, 
                    :hardware, :prompt => true)  %>
   </div>
+  
+  <div class="field">
+    <%= f.label :comment %>
+    <%= f.text_field :comment %>
+  </div>
+
   <div class="field">
     <%= f.label :supplier_id %>
     <%= collection_select(:product, :supplier_id, Supplier.all, :id, 
                    :name, :prompt => true)  %>
   </div>
   <div class="field">
-    <%= f.label :idh_id %>
+    <label for="product_idh_id">IDH</label>
     <%= collection_select(:product, :idh_id, Idh.all, :id, 
                    :name, :prompt => true)  %>
   </div>
@@ -124,51 +136,88 @@
     <label for="product_pd_actual">PD Actual</label>
     <%= f.number_field :pd_actual %>
   </div>
- -->  <div class="field">
+ -->  
+ <!-- <div class="field">
     <label for="product_vpd_plan">VPD Plan</label>
     <%= f.number_field :vpd_plan %>
   </div>
-  <div class="field">
-    <label for="product_vpd_actual">VPD Actual</label>
-    <%= f.number_field :vpd_actual %>
-  </div>
-  <div class="field">
+  -->
+ <!--  <div class="field">
     <label for="product_aa_plan">AA Plan</label>
     <%= f.number_field :aa_plan %>
   </div>
-  <div class="field">
-    <label for="product_aa_actual">AA Actual</label>
-    <%= f.number_field :aa_actual %>
-  </div>
-  <div class="field">
+  -->
+<!--   <div class="field">
     <label for="product_ppc_plan">PPC Plan</label>
     <%= f.number_field :ppc_plan %>
   </div>
-  <div class="field">
-    <label for="product_ppc_actual">PPC Actual</label>
-    <%= f.number_field :ppc_actual %>
-  </div>
-  <div class="field">
+ -->
+<!--   <div class="field">
     <label for="product_pv_plan">PV Plan</label>
     <%= f.number_field :pv_plan %>
   </div>
-  <div class="field">
-    <label for="product_pv_actual">PV Actual</label>
-    <%= f.number_field :pv_actual %>
-  </div>
-  <div class="field">
+ -->
+<!--   <div class="field">
     <label for="product_cr_plan">CR Plan</label>
     <%= f.number_field :cr_plan %>
   </div>
+ -->
+
   <div class="field">
-    <label for="product_cr_actual">CR Actual</label>
-    <%= f.number_field :cr_actual %>
+    <label>Milestones</label>
+    <table>
+      <tr align="center">
+        <td>VPD</td>
+        <td>AA</td>
+        <td>PPC</td>
+        <td>PV</td>
+        <td>CR</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%= f.number_field :vpd_actual %></td>
+        <td><%= f.number_field :aa_vpd %></td>
+        <td><%= f.number_field :ppc_vpd %></td>
+        <td><%= f.number_field :pv_vpd %></td>
+        <td><%= f.number_field :cr_vpd %></td>
+        <td>@VPD</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><%= f.number_field :aa_actual %></td>
+        <td><%= f.number_field :ppc_aa %></td>
+        <td><%= f.number_field :pv_aaa %></td>
+        <td><%= f.number_field :cr_aa %></td>
+        <td>@AA</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><%= f.number_field :ppc_actual %></td>
+        <td><%= f.number_field :pv_ppc %></td>
+        <td><%= f.number_field :cr_ppc %></td>
+        <td>@PPC</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= f.number_field :pv_actual %></td>
+        <td><%= f.number_field :cr_pv %></td>
+        <td>@PV</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= f.number_field :cr_actual %></td>
+        <td>@CR</td>
+      </tr>
+    </table>
   </div>
-<!--   <div class="field">
-    <%= f.label :comment %>
-    <%= f.text_field :comment %>
-  </div>
- -->  <div class="field">
+
+  <div class="field">
    <%= f.label :project_status %>
     <%= f.text_area :project_status, :cols => "60", :rows => "10" %>
   </div>

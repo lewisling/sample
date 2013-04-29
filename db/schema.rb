@@ -11,9 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130327091956) do
+ActiveRecord::Schema.define(:version => 20130429062619) do
 
   create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "cmms", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -81,6 +87,17 @@ ActiveRecord::Schema.define(:version => 20130327091956) do
     t.string   "ChangesFromBaseProduct"
     t.integer  "traffic_id"
     t.integer  "idh_id"
+    t.integer  "aa_vpd"
+    t.integer  "ppc_vpd"
+    t.integer  "pv_vpd"
+    t.integer  "cr_vpd"
+    t.integer  "ppc_aa"
+    t.integer  "pv_aaa"
+    t.integer  "cr_aa"
+    t.integer  "pv_ppc"
+    t.integer  "cr_ppc"
+    t.integer  "cr_pv"
+    t.integer  "cmm_id"
   end
 
   create_table "review_purposes", :force => true do |t|
