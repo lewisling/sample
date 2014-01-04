@@ -100,13 +100,43 @@
         </tr>
 
         <tr>
-          <td>Platform:</td>
+          <td>Processor:</td>
           <td><%= @product.platform.hardware %></td>
         </tr>
 
         <tr>
           <td>Comment:</td>
           <td><%= @product.comment %></td>
+        </tr>
+
+        <tr>
+          <td>KC #1:</td>
+          <td><%= @kc1 %></td>
+        </tr>
+
+        <tr>
+          <td>Comment:</td>
+          <td><%= @product.kc1c %></td>
+        </tr>
+
+        <tr>
+          <td>KC #2:</td>
+          <td><%= @kc2 %></td>
+        </tr>
+
+        <tr>
+          <td>Comment:</td>
+          <td><%= @product.kc2c %></td>
+        </tr>
+
+        <tr>
+          <td>KC #3:</td>
+          <td><%= @kc3 %></td>
+        </tr>
+
+        <tr>
+          <td>Comment:</td>
+          <td><%= @product.kc3c %></td>
         </tr>
 
         <tr>
@@ -192,7 +222,7 @@
         <tr>
           <td valign="top">Milestones:</td>
           <td>
-              <table border="1" align="center" cellpadding="3" cellspacing="30" style="border:1px;border-collapse:collapse;">
+              <table border="1" cellpadding="3" cellspacing="30" style="border:1px;border-collapse:collapse;">
               <tr align="center" style="background-color:lightgray;">
                 <td>VPD</td>
                 <td>AA</td>
@@ -210,7 +240,7 @@
                 <td>@VPD</td>
               </tr>
               <tr>
-                <td></td>
+                <td style="background-color:lightgray;"></td>
                 <td><%= @product.aa_actual %></td>
                 <td><%= @product.ppc_aa %></td>
                 <td><%= @product.pv_aaa %></td>
@@ -218,26 +248,26 @@
                 <td>@AA</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
+                <td style="background-color:lightgray;"></td>
+                <td style="background-color:lightgray;"></td>
                 <td><%= @product.ppc_actual %></td>
                 <td><%= @product.pv_ppc %></td>
                 <td><%= @product.cr_ppc %></td>
                 <td>@PPC</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="background-color:lightgray;"></td>
+                <td style="background-color:lightgray;"></td>
+                <td style="background-color:lightgray;"></td>
                 <td><%= @product.pv_actual %></td>
                 <td><%= @product.cr_pv %></td>
                 <td>@PV</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="background-color:lightgray;"></td>
+                <td style="background-color:lightgray;"></td>
+                <td style="background-color:lightgray;"></td>
+                <td style="background-color:lightgray;"></td>
                 <td><%= @product.cr_actual %></td>
                 <td>@CR</td>
               </tr>

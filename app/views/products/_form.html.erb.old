@@ -1,0 +1,254 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :traffic_id %>
+    <%= collection_select(:product, :traffic_id, Traffic.all, :id, 
+                   :name, :prompt => true)  %>
+  </div>
+  <div class="field">
+    <%= f.label :handover %>
+    <%= f.check_box :handover %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %>
+    <%= collection_select(:product, :category_id, Category.all, :id, 
+                   :name, :prompt => true)  %>
+  </div>
+  <div class="field">
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <label for="product_cmm_id">CMM</label>
+    <%= collection_select(:product, :cmm_id, Cmm.all, :id, 
+                   :name, :prompt => true)  %>
+  </div>
+
+  <div class="field">
+    <label for="product_swc_id">SW Class</label>
+    <%= collection_select(:product, :swc_id, Swc.all, :id, 
+                   :name, :prompt => true)  %>
+  </div>
+
+  <div class="field">
+    <label for="swcconfirmed">Confirmed by SPL</label>
+    <%= f.check_box :swccomfirmed%>
+  </div>
+
+  <div class="field">
+    <label for="BaseProduct">Base Product</label>
+    <%= f.text_field :BaseProduct %>
+  </div>
+  <div class="field">
+    <label for="ChangesFromBaseProduct">Changes From Base</label>
+    <%= f.text_field :ChangesFromBaseProduct %>
+  </div>
+  <div class="field">
+    <label for="AppNameVersion">App Name&Version</label>
+    <%= f.text_field :AppNameVersion %>
+  </div>
+  <div class="field">
+    <label for="NewPlatform">New Platform</label>
+    <%= f.check_box :NewPlatform %>
+  </div>
+  <div class="field">
+    <label for="NewSDK">New SDK</label>
+    <%= f.check_box :NewSDK %>
+  </div>
+  <div class="field">
+    <label for="NewODM">New ODM</label>
+    <%= f.check_box :NewODM %>
+  </div>
+  <div class="field">
+    <label for="NewIDH">New IDH</label>
+    <%= f.check_box :NewIDH %>
+  </div>
+  <div class="field">
+    <label for="NewApp">New App</label>
+    <%= f.check_box :NewApp %>
+  </div>
+
+  <div class="field">
+    <label for="product_swa_id">SWA</label>
+    <%= collection_select(:product, :swa_id, Swa.all, :id, 
+                   :name, :prompt => true)  %>
+  </div>
+  <div class="field">
+    <label for="product_spl_id">SPL</label>
+    <%= collection_select(:product, :spl_id, Spl.all, :id, 
+                   :name, :prompt => true)  %>
+  </div>
+
+  <div class="field">
+    <label for="platform_id">Processor</label>
+    <%= collection_select(:product, :platform_id, Platform.all, :id, 
+                   :hardware, :prompt => true)  %>
+  </div>
+  
+  <div class="field">
+    <label for="comment">Processor Comment</label>
+    <%= f.text_field :comment %>
+  </div>
+
+  <div class="field">
+    <label for="kc1_id">Key Component #1</label>
+    <%= collection_select(:product, :kc1_id, Platform.all, :id, 
+                   :hardware, :prompt => true)  %>
+  </div>
+  
+  <div class="field">
+    <label for="comment">KC#1 Comment</label>
+    <%= f.text_field :kc1c %>
+  </div>
+
+  <div class="field">
+    <label for="kc1_id">Key Component #2</label>
+    <%= collection_select(:product, :kc2_id, Platform.all, :id, 
+                   :hardware, :prompt => true)  %>
+  </div>
+  
+  <div class="field">
+    <label for="comment">KC#2 Comment</label>
+    <%= f.text_field :kc2c %>
+  </div>
+
+  <div class="field">
+    <label for="kc1_id">Key Component #3</label>
+    <%= collection_select(:product, :kc3_id, Platform.all, :id, 
+                   :hardware, :prompt => true)  %>
+  </div>
+  
+  <div class="field">
+    <label for="comment">KC#3 Comment</label>
+    <%= f.text_field :kc3c %>
+  </div>
+
+  <div class="field">
+    <%= f.label :supplier_id %>
+    <%= collection_select(:product, :supplier_id, Supplier.all, :id, 
+                   :name, :prompt => true)  %>
+  </div>
+  <div class="field">
+    <label for="product_idh_id">IDH</label>
+    <%= collection_select(:product, :idh_id, Idh.all, :id, 
+                   :name, :prompt => true)  %>
+  </div>
+
+  <div class="field">
+    <label for="product_pd_plan">PD</label>
+    <%= f.number_field :pd_plan %>
+  </div>
+<!--   <div class="field">
+    <label for="product_pd_actual">PD Actual</label>
+    <%= f.number_field :pd_actual %>
+  </div>
+ -->  
+ <!-- <div class="field">
+    <label for="product_vpd_plan">VPD Plan</label>
+    <%= f.number_field :vpd_plan %>
+  </div>
+  -->
+ <!--  <div class="field">
+    <label for="product_aa_plan">AA Plan</label>
+    <%= f.number_field :aa_plan %>
+  </div>
+  -->
+<!--   <div class="field">
+    <label for="product_ppc_plan">PPC Plan</label>
+    <%= f.number_field :ppc_plan %>
+  </div>
+ -->
+<!--   <div class="field">
+    <label for="product_pv_plan">PV Plan</label>
+    <%= f.number_field :pv_plan %>
+  </div>
+ -->
+<!--   <div class="field">
+    <label for="product_cr_plan">CR Plan</label>
+    <%= f.number_field :cr_plan %>
+  </div>
+ -->
+
+  <div class="field">
+    <label>Milestones</label>
+    <table>
+      <tr align="center">
+        <td>VPD</td>
+        <td>AA</td>
+        <td>PPC</td>
+        <td>PV</td>
+        <td>CR</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%= f.number_field :vpd_actual %></td>
+        <td><%= f.number_field :aa_vpd %></td>
+        <td><%= f.number_field :ppc_vpd %></td>
+        <td><%= f.number_field :pv_vpd %></td>
+        <td><%= f.number_field :cr_vpd %></td>
+        <td>@VPD</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><%= f.number_field :aa_actual %></td>
+        <td><%= f.number_field :ppc_aa %></td>
+        <td><%= f.number_field :pv_aaa %></td>
+        <td><%= f.number_field :cr_aa %></td>
+        <td>@AA</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><%= f.number_field :ppc_actual %></td>
+        <td><%= f.number_field :pv_ppc %></td>
+        <td><%= f.number_field :cr_ppc %></td>
+        <td>@PPC</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= f.number_field :pv_actual %></td>
+        <td><%= f.number_field :cr_pv %></td>
+        <td>@PV</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= f.number_field :cr_actual %></td>
+        <td>@CR</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="field">
+   <%= f.label :project_status %>
+    <%= f.text_area :project_status, :cols => "60", :rows => "10" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

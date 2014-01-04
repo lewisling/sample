@@ -12,7 +12,6 @@
 <% @platforms.each do |platform| %>
   <tr>
     <td><%= platform.hardware %></td>
-    <td><%= platform.software %></td>
     <td><%= link_to 'Show', platform %></td>
     <td><%= link_to 'Edit', edit_platform_path(platform) %></td>
     <td><%= link_to 'Destroy', platform, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>

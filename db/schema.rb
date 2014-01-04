@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429062619) do
+ActiveRecord::Schema.define(:version => 20130510062618) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -20,12 +20,6 @@ ActiveRecord::Schema.define(:version => 20130429062619) do
   end
 
   create_table "cmms", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "idhs", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -72,8 +66,8 @@ ActiveRecord::Schema.define(:version => 20130429062619) do
     t.string   "comment"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.string   "swc"
     t.string   "cat"
-    t.integer  "swc_id"
     t.text     "project_status"
     t.string   "traffic"
     t.boolean  "swccomfirmed"
@@ -85,8 +79,6 @@ ActiveRecord::Schema.define(:version => 20130429062619) do
     t.string   "AppNameVersion"
     t.string   "BaseProduct"
     t.string   "ChangesFromBaseProduct"
-    t.integer  "traffic_id"
-    t.integer  "idh_id"
     t.integer  "aa_vpd"
     t.integer  "ppc_vpd"
     t.integer  "pv_vpd"
@@ -98,6 +90,12 @@ ActiveRecord::Schema.define(:version => 20130429062619) do
     t.integer  "cr_ppc"
     t.integer  "cr_pv"
     t.integer  "cmm_id"
+    t.integer  "kc1_id"
+    t.string   "kc1c"
+    t.integer  "kc2_id"
+    t.string   "kc2c"
+    t.integer  "kc3_id"
+    t.string   "kc3c"
   end
 
   create_table "review_purposes", :force => true do |t|
@@ -137,6 +135,12 @@ ActiveRecord::Schema.define(:version => 20130429062619) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "sw_classes", :force => true do |t|
+    t.string   "level"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "swas", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -145,12 +149,6 @@ ActiveRecord::Schema.define(:version => 20130429062619) do
   end
 
   create_table "swcs", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "traffics", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

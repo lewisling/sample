@@ -24,8 +24,12 @@ group :assets do
   gem 'jquery-ui-rails'
 end
 
+gem 'jquery-datatables-rails'
+gem 'jquery-ui-rails'
 gem 'jquery-rails'
 
+gem 'therubyracer'
+gem 'ajax-datatables-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

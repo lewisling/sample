@@ -56,6 +56,9 @@ class ProductsController < ApplicationController
     @swas = Swa.all
     @cats = Category.all
     @swcs = Swc.all
+    @cmms = Cmm.all
+    @platforms = Platform.all
+    @products = Product.where(:active => true)
 
     respond_to do |format|
       format.html # summary.html.erb
@@ -63,16 +66,16 @@ class ProductsController < ApplicationController
     end
   end
 
-  # GET /summary
-  def summary_class
-    @cats = Category.all
-    @swcs = Swc.all
+  # # GET /summary
+  # def summary_class
+  #   @cats = Category.all
+  #   @swcs = Swc.all
 
-    respond_to do |format|
-      format.html # summary.html.erb
-      format.xls # summary.xls.erb
-    end
-  end
+  #   respond_to do |format|
+  #     format.html # summary.html.erb
+  #     format.xls # summary.xls.erb
+  #   end
+  # end
 
   # GET /milestone
   def milestone
@@ -104,6 +107,17 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+    if @product.kc1_id
+      @kc1 = Platform.find(@product.kc1_id).hardware
+    end
+
+    if @product.kc2_id
+      @kc2 = Platform.find(@product.kc2_id).hardware
+    end
+
+    if @product.kc3_id
+      @kc3 = Platform.find(@product.kc3_id).hardware
+    end
 
     respond_to do |format|
       format.html # show.html.erb

@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :traffic_id %>
-    <%= collection_select(:product, :traffic_id, Traffic.all, :id, 
+    <%= collection_select(:product, :traffic_id, Traffic.order('name ASC').all, :id, 
                    :name, :prompt => true)  %>
   </div>
   <div class="field">
@@ -26,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :category_id %>
-    <%= collection_select(:product, :category_id, Category.all, :id, 
+    <%= collection_select(:product, :category_id, Category.order('name ASC').all, :id, 
                    :name, :prompt => true)  %>
   </div>
   <div class="field">
@@ -41,13 +41,13 @@
 
   <div class="field">
     <label for="product_cmm_id">CMM</label>
-    <%= collection_select(:product, :cmm_id, Cmm.all, :id, 
+    <%= collection_select(:product, :cmm_id, Cmm.order('name ASC').all, :id, 
                    :name, :prompt => true)  %>
   </div>
 
   <div class="field">
     <label for="product_swc_id">SW Class</label>
-    <%= collection_select(:product, :swc_id, Swc.all, :id, 
+    <%= collection_select(:product, :swc_id, Swc.order('name ASC').all, :id, 
                    :name, :prompt => true)  %>
   </div>
 
@@ -91,44 +91,71 @@
 
   <div class="field">
     <label for="product_swa_id">SWA</label>
-    <%= collection_select(:product, :swa_id, Swa.all, :id, 
+    <%= collection_select(:product, :swa_id, Swa.order('name ASC').all, :id, 
                    :name, :prompt => true)  %>
   </div>
   <div class="field">
     <label for="product_spl_id">SPL</label>
-    <%= collection_select(:product, :spl_id, Spl.all, :id, 
+    <%= collection_select(:product, :spl_id, Spl.order('name ASC').all, :id, 
                    :name, :prompt => true)  %>
   </div>
+
   <div class="field">
-    <%= f.label :platform_id %>
-    <%= collection_select(:product, :platform_id, Platform.all, :id, 
+    <label for="platform_id">Processor</label>
+    <%= collection_select(:product, :platform_id, Platform.order('hardware ASC').all, :id, 
                    :hardware, :prompt => true)  %>
   </div>
   
   <div class="field">
-    <%= f.label :comment %>
+    <label for="comment">Processor Comment</label>
     <%= f.text_field :comment %>
   </div>
 
   <div class="field">
+    <label for="kc1_id">Key Component #1</label>
+    <%= collection_select(:product, :kc1_id, Platform.order('hardware ASC').all, :id, 
+                   :hardware, :prompt => true)  %>
+  </div>
+  
+  <div class="field">
+    <label for="comment">KC#1 Comment</label>
+    <%= f.text_field :kc1c %>
+  </div>
+
+  <div class="field">
+    <label for="kc1_id">Key Component #2</label>
+    <%= collection_select(:product, :kc2_id, Platform.order('hardware ASC').all, :id, 
+                   :hardware, :prompt => true)  %>
+  </div>
+  
+  <div class="field">
+    <label for="comment">KC#2 Comment</label>
+    <%= f.text_field :kc2c %>
+  </div>
+
+  <div class="field">
+    <label for="kc1_id">Key Component #3</label>
+    <%= collection_select(:product, :kc3_id, Platform.order('hardware ASC').all, :id, 
+                   :hardware, :prompt => true)  %>
+  </div>
+  
+  <div class="field">
+    <label for="comment">KC#3 Comment</label>
+    <%= f.text_field :kc3c %>
+  </div>
+
+  <div class="field">
     <%= f.label :supplier_id %>
-    <%= collection_select(:product, :supplier_id, Supplier.all, :id, 
+    <%= collection_select(:product, :supplier_id, Supplier.order('name ASC').all, :id, 
                    :name, :prompt => true)  %>
   </div>
   <div class="field">
     <label for="product_idh_id">IDH</label>
-    <%= collection_select(:product, :idh_id, Idh.all, :id, 
+    <%= collection_select(:product, :idh_id, Idh.order('name ASC').all, :id, 
                    :name, :prompt => true)  %>
   </div>
-<!--   <div class="field">
-    <%= f.label :volume_forecast %>
-    <%= f.number_field :volume_forecast %>
-  </div>
+
   <div class="field">
-    <%= f.label :folder_ready %>
-    <%= f.check_box :folder_ready %>
-  </div>
- -->  <div class="field">
     <label for="product_pd_plan">PD</label>
     <%= f.number_field :pd_plan %>
   </div>

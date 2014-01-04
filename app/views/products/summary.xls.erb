@@ -1,29 +1,65 @@
 <?xml version="1.0"?>
-<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:x="urn:schemas-microsoft-com:office:excel"
-  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
-  xmlns:html="http://www.w3.org/TR/REC-html40">
-  <Worksheet ss:Name="Sheet1">
+<ss:Workbook xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
 
-<Table>
-  <Row>
-    <Cell><Data ss:Type="String">Name/Cat.</Data></Cell>
-    <% @cats.each do |cat| %>
-      <Cell><Data ss:Type="String"><%= cat.name %></Data></Cell>
-    <% end %>
-  </Row>
+  <% @cats.each do |cat| %>
+  <ss:Worksheet ss:Name="<%= cat.name %>">
+  <ss:Table>
+    <ss:Row>
+      <ss:Cell><ss:Data ss:Type="String">Project Name</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">Description</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">CMM</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">Platform</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">New SW Features</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">SW Class</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">ODM</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">IDH</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">SW Pre-Dev Start</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">SWA</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">Current Milestone</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">Next Milestone Date</ss:Data></ss:Cell>
+      <ss:Cell><ss:Data ss:Type="String">Handover to IPD</ss:Data></ss:Cell>
+    </ss:Row>
 
-  <% @swas.each do |swa| %>
-  <Row>
-    <Cell><Data ss:Type="String"><%= swa.name %></Data></Cell>
-    <% @cats.each do |cat| %>
-      <% @p = Product.where(:swa_id => swa.id, :category_id => cat.id).count %>
-      <Cell><Data ss:Type="String"><%= @p if @p > 0 %></Data></Cell>
+    <% @products.where(:category_id => cat).each do |product| %>
+
+      <% if product.cr_actual? %>
+      <%    current_milestone = 'CR:' + product.cr_actual.to_s() %>
+      <%    next_milestone = "N/A" %>
+      <% elsif product.pv_actual? %>
+      <%    current_milestone = 'PV:' + product.pv_actual.to_s() %>
+      <%    next_milestone = product.cr_pv %>
+      <% elsif product.ppc_actual? %>
+      <%    current_milestone = 'PPC:' + product.ppc_actual.to_s() %>
+      <%    next_milestone = product.pv_ppc %>
+      <% elsif product.aa_actual? %>
+      <%    current_milestone = 'AA:' + product.aa_actual.to_s() %>
+      <%    next_milestone = product.ppc_aa %>
+      <% elsif product.vpd_actual? %>
+      <%    current_milestone = 'VPD:' + product.vpd_actual.to_s() %>
+      <%    next_milestone = product.aa_vpd %>
+      <% else %>
+      <%    current_milestone = "N/A" %>
+      <%    next_milestone = "" %>
+      <% end %>
+
+      <ss:Row>
+        <ss:Cell><ss:Data ss:Type="String"><%= product.model %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= product.description %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= product.cmm.name %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= product.platform.hardware %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= product.ChangesFromBaseProduct %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= product.swc.name %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= product.supplier.name %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= product.idh.name %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= product.pd_plan %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= product.swa.name %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= current_milestone %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= next_milestone %></ss:Data></ss:Cell>
+        <ss:Cell><ss:Data ss:Type="String"><%= product.handover %></ss:Data></ss:Cell>
+      </ss:Row>
     <% end %>
-  </Row>
+  </ss:Table>
+  </ss:Worksheet>
   <% end %>
-</Table>
 
-  </Worksheet>
-</Workbook>
+</ss:Workbook>
